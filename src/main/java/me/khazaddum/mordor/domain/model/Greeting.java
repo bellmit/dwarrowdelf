@@ -1,4 +1,4 @@
-package hello;
+package me.khazaddum.mordor.domain.model;
 
 public class Greeting {
 

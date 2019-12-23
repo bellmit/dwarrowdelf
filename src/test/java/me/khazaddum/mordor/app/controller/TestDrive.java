@@ -1,4 +1,4 @@
-package hello;
+package me.khazaddum.mordor.app.controller;
 
 import org.junit.Test;
 
