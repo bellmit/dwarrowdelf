@@ -9,6 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ResponseDto {
 
-    String message;
+	String message;
 
 }

@@ -4,6 +4,6 @@ import com.bankless.domain.model.Greeting;
 
 public interface GreetingRepository {
 
-    String upsert(Greeting greeting );
+	String upsert(Greeting greeting);
 
 }
