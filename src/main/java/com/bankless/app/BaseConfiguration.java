@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BaseConfiguration {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BaseConfiguration.class);
+	private static final Logger LOG = LoggerFactory.getLogger(BaseConfiguration.class);
 
-    @Bean
-    public GreetingService greetingService() {
-        LOG.info("Binding greetingService");
-        return new GreetingService();
-    }
+	@Bean
+	public GreetingService greetingService() {
+		LOG.info("Binding greetingService");
+		return new GreetingService();
+	}
 
 }

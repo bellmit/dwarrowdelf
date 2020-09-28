@@ -9,6 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserDto {
 
-    String name;
+	String name;
 
 }
