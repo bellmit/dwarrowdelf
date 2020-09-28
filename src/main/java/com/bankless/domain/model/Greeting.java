@@ -1,4 +1,4 @@
-package hello;
+package com.bankless.domain.model;
 
 public class Greeting {
 
