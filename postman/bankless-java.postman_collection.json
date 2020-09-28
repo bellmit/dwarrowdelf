@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "93c0939f-7fdc-46e9-9a95-edbc6db4c3db",
+		"name": "bankless-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/greeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"John Doe\"\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/greeting",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/status",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
