@@ -1,4 +1,4 @@
-package com.bankless.core.domain.model;
+package com.bankless.domain.model;
 
 public class Greeting {
 

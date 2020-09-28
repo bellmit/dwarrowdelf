@@ -1,6 +1,6 @@
-package com.bankless.core.domain.service;
+package com.bankless.domain.service;
 
-import com.bankless.core.domain.model.Greeting;
+import com.bankless.domain.model.Greeting;
 import org.springframework.util.StringUtils;
 import java.util.concurrent.atomic.AtomicLong;
 
