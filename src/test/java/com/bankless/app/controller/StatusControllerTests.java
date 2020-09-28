@@ -22,7 +22,7 @@ public class StatusControllerTests {
 	private MockMvc mockMvc;
 
 	@Test
-    @DisplayName("GET status should be successful")
+	@DisplayName("GET status should be successful")
 	public void getStatus() throws Exception {
 
 		this.mockMvc.perform(get("/status")).andDo(print()).andExpect(status().isOk());

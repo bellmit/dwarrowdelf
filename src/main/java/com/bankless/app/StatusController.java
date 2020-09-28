@@ -19,7 +19,7 @@ public class StatusController {
 	}
 
 	@PostMapping("/greeting")
-	public ResponseEntity sayHello(@RequestBody UserDto request ) {
+	public ResponseEntity sayHello(@RequestBody UserDto request) {
 		ResponseDto dto = new ResponseDto("Hello " + request.getName());
 		return new ResponseEntity<ResponseDto>(dto, HttpStatus.OK);
 	}
