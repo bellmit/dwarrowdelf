@@ -15,8 +15,8 @@ public class AccountTable {
 	public static final String ACCOUNTS_TABLE = "accounts";
 
 	public static String createTableCql(String keySpace) {
-		return String.format("CREATE TABLE IF NOT EXISTS " + "%s.%s(" + " country_code text," + " no number,"
-				+ " balance number," + " PRIMARY KEY ((country_code), no)" + ");", keySpace, ACCOUNTS_TABLE);
+		return String.format("CREATE TABLE IF NOT EXISTS " + "%s.%s(" + " country_code text," + " no int,"
+				+ " balance bigint," + " PRIMARY KEY ((country_code), no)" + ");", keySpace, ACCOUNTS_TABLE);
 	}
 
 	@Data

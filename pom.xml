@@ -57,10 +57,11 @@
         </dependency>
         <dependency>
             <groupId>org.cassandraunit</groupId>
-            <artifactId>cassandra-unit-spring</artifactId>
-            <version>4.3.1.0</version>
-            <scope>test</scope>
+            <artifactId>cassandra-unit</artifactId>
+            <version>3.5.0.1</version>
         </dependency>
+
+
     </dependencies>
 
     <properties>
