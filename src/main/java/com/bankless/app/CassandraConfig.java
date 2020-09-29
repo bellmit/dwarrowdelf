@@ -15,9 +15,8 @@ import org.springframework.data.cassandra.core.cql.keyspace.DataCenterReplicatio
 
 import java.util.List;
 
-
 @Configuration
-@Import({CassandraConfigProperties.class})
+@Import({ CassandraConfigProperties.class })
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
 	protected final CassandraConfigProperties props;
@@ -26,27 +25,38 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 		this.props = cassandraConfigProperties;
 	}
 
-	protected String getKeyspaceName() { return this.props.getKeyspace(); }
+	protected String getKeyspaceName() {
+		return this.props.getKeyspace();
+	}
 
-	protected int getPort() { return this.props.getService().getPort(); }
+	protected int getPort() {
+		return this.props.getService().getPort();
+	}
 
-	protected String getContactPoints() { return this.props.getService().getHost(); }
+	protected String getContactPoints() {
+		return this.props.getService().getHost();
+	}
 
 	protected AuthProvider getAuthProvider() {
 		return new PlainTextAuthProvider(this.props.getUsername(), this.props.getPassword());
 	}
 
 	protected List<CreateKeyspaceSpecification> getKeyspaceCreations() {
-		if ( this.props.isAutoinit() && this.props.isSimplestrategy() ) {
-			CreateKeyspaceSpecification specification = CreateKeyspaceSpecification.createKeyspace(this.props.getKeyspace())
-				.ifNotExists().withSimpleReplication( (long) this.props.getReplication().getFactor() );
+		if (this.props.isAutoinit() && this.props.isSimplestrategy()) {
+			CreateKeyspaceSpecification specification = CreateKeyspaceSpecification
+					.createKeyspace(this.props.getKeyspace()).ifNotExists()
+					.withSimpleReplication((long) this.props.getReplication().getFactor());
 			return Lists.newArrayList(specification);
-		} else if (this.props.isSimplestrategy()) {
-			DataCenterReplication dataCenterReplication = DataCenterReplication.of(this.props.getDatacenter(), (long) this.props.getReplication().getFactor() );
-			CreateKeyspaceSpecification specification = CreateKeyspaceSpecification.createKeyspace(this.props.getKeyspace())
-				.ifNotExists().withNetworkReplication(dataCenterReplication);
+		}
+		else if (this.props.isSimplestrategy()) {
+			DataCenterReplication dataCenterReplication = DataCenterReplication.of(this.props.getDatacenter(),
+					(long) this.props.getReplication().getFactor());
+			CreateKeyspaceSpecification specification = CreateKeyspaceSpecification
+					.createKeyspace(this.props.getKeyspace()).ifNotExists()
+					.withNetworkReplication(dataCenterReplication);
 			return Lists.newArrayList(specification);
-		} else {
+		}
+		else {
 			return Lists.newArrayList();
 		}
 	}
