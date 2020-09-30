@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.cassandra.core.CassandraTemplate;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @Configuration
 @Profile("test")
+@EnableCassandraRepositories("com.bankless.infrastructure.persistence.cassandra")
 public class TestCassandraConfig {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(TestCassandraConfig.class);

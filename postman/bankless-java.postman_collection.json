@@ -48,6 +48,30 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/USA/account?no=80001",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"USA",
+						"account"
+					],
+					"query": [
+						{
+							"key": "no",
+							"value": "80001"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

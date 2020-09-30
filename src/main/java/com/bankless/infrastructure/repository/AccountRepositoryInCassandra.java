@@ -7,7 +7,6 @@ import com.bankless.infrastructure.persistence.cassandra.repository.AccountCassa
 import com.bankless.infrastructure.persistence.cassandra.table.AccountCassandraTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.Optional;
 
 public class AccountRepositoryInCassandra implements AccountRepository {
