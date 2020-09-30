@@ -1,11 +1,8 @@
-package com.bankless.app;
+package com.bankless.app.config.cassandra;
 
 import com.datastax.oss.driver.shaded.guava.common.collect.Lists;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.datastax.driver.core.AuthProvider;
 import com.datastax.driver.core.PlainTextAuthProvider;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
