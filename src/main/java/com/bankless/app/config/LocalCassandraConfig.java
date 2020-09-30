@@ -21,11 +21,6 @@ public class LocalCassandraConfig {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(LocalCassandraConfig.class);
 
-	// FIXME. unable to start local JMX service
-	// 2020-09-29 16:44:36.749 ERROR 5649 --- [pool-2-thread-1]
-	// o.a.cassandra.service.StartupChecks : cassandra.jmx.local.port missing from
-	// cassandra-env.sh, unable to start local JMX service.
-
 	@Value("${cassandra.keyspace}")
 	private String keyspace;
 
