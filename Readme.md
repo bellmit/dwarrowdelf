@@ -3,19 +3,29 @@
 
 ## Commands
 
+**Console**
 ```
-// run local
+# run local
 ./mvnw clean compile test
 ./mvnw spring-boot:run
 
-// run .jar file
+# run .jar file
 ./mvnw package
 java -jar target/bankless-java-0.1.0.jar
 
-// format code
+# format code
 ./mvnw spring-javaformat:apply
 ```
 
+**Cassandra**
+```
+# connect to embedded Cassandra
+export CQLSH_PORT=9042 ; export CQLSH_HOST=127.0.0.1 ; ./cqlsh -u cassandra -p cassandra
+expand on; use bankless;
+
+# queries
+select * from accounts;
+```
 
 ### HTTP-API
 
