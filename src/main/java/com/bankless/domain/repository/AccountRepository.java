@@ -5,6 +5,6 @@ import java.util.Optional;
 
 public interface AccountRepository {
 
-	Optional<Account> find(String countryCode, long no);
+	public Optional<Account> find(String countryCode, int no);
 
 }

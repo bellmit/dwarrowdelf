@@ -4,11 +4,11 @@ public class Account {
 
 	private String countryCode;
 
-	private long no;
+	private int no;
 
 	private double balance;
 
-	public Account(String countryCode, long no, double balance) {
+	public Account(String countryCode, int no, double balance) {
 		this.countryCode = countryCode;
 		this.no = no;
 		this.balance = balance;
@@ -22,11 +22,11 @@ public class Account {
 		this.countryCode = countryCode;
 	}
 
-	public long getNo() {
+	public int getNo() {
 		return no;
 	}
 
-	public void setNo(long no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 

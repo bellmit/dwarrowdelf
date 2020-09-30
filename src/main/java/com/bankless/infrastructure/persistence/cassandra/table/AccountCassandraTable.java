@@ -9,8 +9,8 @@ import org.springframework.data.cassandra.core.mapping.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(AccountTable.ACCOUNTS_TABLE)
-public class AccountTable {
+@Table(AccountCassandraTable.ACCOUNTS_TABLE)
+public class AccountCassandraTable {
 
 	public static final String ACCOUNTS_TABLE = "accounts";
 
@@ -26,21 +26,15 @@ public class AccountTable {
 	public static class Key {
 
 		@PrimaryKeyColumn(name = "country_code", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-		private String tenantId;
+		private String countryCode;
 
 		@PrimaryKeyColumn(name = "no", ordinal = 0, type = PrimaryKeyType.CLUSTERED)
-		private String menuId;
+		private int no;
 
 	}
 
 	@PrimaryKey
-	private AccountTable.Key key;
-
-	@Column("country_code")
-	private String countryCode;
-
-	@Column("no")
-	private long AccountNo;
+	private AccountCassandraTable.Key key;
 
 	@Column("balance")
 	private long balance;
