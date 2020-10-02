@@ -4,6 +4,7 @@
 ## Commands
 
 **Console**
+
 ```
 # run local
 ./mvnw clean compile test
@@ -18,6 +19,7 @@ java -jar target/bankless-java-0.1.0.jar
 ```
 
 **Cassandra**
+
 ```
 # connect to embedded Cassandra
 export CQLSH_PORT=9042 ; export CQLSH_HOST=127.0.0.1 ; ./cqlsh -u cassandra -p cassandra
@@ -25,6 +27,17 @@ expand on; use bankless;
 
 # queries
 select * from accounts;
+```
+
+**Kafka**
+
+```
+# consume events in console
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \
+--consumer-property group.id=local-consumer-group --topic local-embedded-topic --from-beginning
+
+# produce events from console
+./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic local-embedded-topic
 ```
 
 ### HTTP-API
