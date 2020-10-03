@@ -24,7 +24,8 @@ public abstract class KafkaAccountOpenedValidator {
 
 		String[] fields = plainEvent.split(";");
 		if (fields.length != 4) {
-			String error = String.format("Invalid number of fields separated with semicolon ';' expected 4, received %s", fields.length);
+			String error = String.format(
+					"Invalid number of fields separated with semicolon ';' expected 4, received %s", fields.length);
 			return Validation.invalid(Seq(error));
 		}
 		else {

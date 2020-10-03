@@ -17,15 +17,10 @@ public class KafkaAccountOpenedEvent {
 
 	private String balance;
 
-
 	@Override
 	public String toString() {
-		return "KafkaAccountOpenedEvent{" +
-				"dateTime='" + dateTime + '\'' +
-				", countryCode='" + countryCode + '\'' +
-				", no='" + no + '\'' +
-				", balance='" + balance + '\'' +
-				'}';
+		return "KafkaAccountOpenedEvent{" + "dateTime='" + dateTime + '\'' + ", countryCode='" + countryCode + '\''
+				+ ", no='" + no + '\'' + ", balance='" + balance + '\'' + '}';
 	}
 
 }

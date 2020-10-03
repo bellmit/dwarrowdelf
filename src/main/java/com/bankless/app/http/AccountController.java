@@ -1,11 +1,9 @@
-package com.bankless.app;
+package com.bankless.app.http;
 
-import com.bankless.app.dto.AccountResponseDto;
-import com.bankless.app.dto.ResponseDto;
-import com.bankless.app.dto.UserDto;
+import com.bankless.app.http.dto.AccountResponse;
+import com.bankless.app.http.dto.BaseResponse;
 import com.bankless.domain.model.Account;
 import com.bankless.domain.repository.AccountRepository;
-import com.bankless.infrastructure.repository.AccountRepositoryInCassandra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +24,13 @@ public class AccountController {
 
 		Optional<Account> result = accountRepository.find(countryCode, accountNo);
 		if (result.isPresent()) {
-			AccountResponseDto dto = new AccountResponseDto(LocalDateTime.now().toString(), result.get());
-			return new ResponseEntity<AccountResponseDto>(dto, HttpStatus.OK);
+			AccountResponse response = new AccountResponse(LocalDateTime.now().toString(), result.get());
+			return new ResponseEntity<AccountResponse>(response, HttpStatus.OK);
 		}
 		else {
-			ResponseDto dto = new ResponseDto(LocalDateTime.now().toString(),
+			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(),
 					String.format("Account number %s for country code %s not found", accountNo, countryCode));
-			return new ResponseEntity<ResponseDto>(dto, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<BaseResponse>(response, HttpStatus.NOT_FOUND);
 		}
 
 	}

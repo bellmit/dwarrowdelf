@@ -32,7 +32,7 @@ public class AccountOpenedSubscriber {
 			LOGGER.info("Processing event: " + parseResult.get().toString());
 		}
 		else {
-			LOGGER.warn( String.format("Skipping event: '%s'. %s", data, parseResult.getLeft()) );
+			LOGGER.warn(String.format("Skipping event: '%s'. %s", data, parseResult.getLeft()));
 		}
 
 	}

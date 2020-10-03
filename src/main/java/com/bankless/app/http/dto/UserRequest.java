@@ -1,4 +1,4 @@
-package com.bankless.app.dto;
+package com.bankless.app.http.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class UserDto {
+public class UserRequest {
 
-	String name;
+	private String name;
 
 }
