@@ -13,11 +13,11 @@ import java.io.IOException;
 
 @Configuration
 @Profile("test")
-public class CassandraUnitTestConfig {
+public class EmbeddedCassandraTestServerConfig {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CassandraUnitTestConfig.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmbeddedCassandraTestServerConfig.class);
 
-	public CassandraUnitTestConfig() {
+	public EmbeddedCassandraTestServerConfig() {
 	}
 
 	@Bean

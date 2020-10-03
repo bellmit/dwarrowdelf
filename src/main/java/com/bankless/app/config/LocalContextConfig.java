@@ -1,5 +1,7 @@
 package com.bankless.app.config;
 
+import com.bankless.app.kafka.AccountOpenedPublisher;
+import com.bankless.app.kafka.AccountOpenedSubscriber;
 import com.bankless.domain.repository.AccountRepository;
 import com.bankless.infrastructure.persistence.cassandra.StartupScripts;
 import com.bankless.infrastructure.persistence.cassandra.repository.AccountCassandraRepo;
@@ -28,9 +30,19 @@ public class LocalContextConfig {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LocalContextConfig.class);
 
 	@Bean
-	AccountRepository bindAccountRepository(AccountCassandraRepo accountCassandraRepo) {
+	public AccountRepository bindAccountRepository(AccountCassandraRepo accountCassandraRepo) {
 		LOGGER.info("Binding account repository to local context");
 		return new AccountRepositoryInCassandra(accountCassandraRepo);
+	}
+
+	@Bean
+	public AccountOpenedSubscriber bindAccountOpenedSubscriber() {
+		return new AccountOpenedSubscriber();
+	}
+
+	@Bean
+	public AccountOpenedPublisher bindAccountOpenedPublisher() {
+		return new AccountOpenedPublisher();
 	}
 
 }

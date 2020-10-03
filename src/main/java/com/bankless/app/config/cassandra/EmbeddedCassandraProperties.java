@@ -3,9 +3,8 @@ package com.bankless.app.config.cassandra;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @ConfigurationProperties("cassandra")
-public class CassandraConfigProperties {
+public class EmbeddedCassandraProperties {
 
 	private String username;
 
@@ -19,11 +18,11 @@ public class CassandraConfigProperties {
 
 	private String datacenter;
 
-	private CassandraConfigProperties.Service service;
+	private EmbeddedCassandraProperties.Service service;
 
-	private CassandraConfigProperties.Replication replication;
+	private EmbeddedCassandraProperties.Replication replication;
 
-	public CassandraConfigProperties() {
+	public EmbeddedCassandraProperties() {
 	}
 
 	public String getUsername() {

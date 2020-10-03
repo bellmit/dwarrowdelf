@@ -32,19 +32,19 @@ public class LocalCassandraConfig {
 				template.getCqlOperations().execute(statement);
 			}
 			LOGGER.info("Inserting local records into accounts table");
-			for (String statement : getInsertRows("local-accounts.sql")) {
+			for (String statement : getDataBaseScripts("local-accounts.sql")) {
 				template.getCqlOperations().execute(statement);
 			}
 		};
 	}
 
-	private List<String> getInsertRows(String fileName) {
+	private List<String> getDataBaseScripts(String fileName) {
 		try {
 			File file = new ClassPathResource(fileName).getFile();
 			return Files.readAllLines(file.toPath());
 		}
 		catch (Exception ex) {
-			throw new RuntimeException(String.format("Unable to get insert rows from file %s", fileName), ex);
+			throw new RuntimeException(String.format("Unable to get database scripts from file %s", fileName), ex);
 		}
 	}
 
