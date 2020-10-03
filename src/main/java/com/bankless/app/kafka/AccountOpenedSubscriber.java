@@ -25,7 +25,7 @@ public class AccountOpenedSubscriber {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AccountOpenedSubscriber.class);
 
 	@KafkaListener(topics = "${kafka.topic.account.opened}")
-	public void listen(String data) {
+	public void subscribe(String data) {
 
 		Either<String, KafkaAccountOpenedEvent> parseResult = parseEvent(data);
 		if (parseResult.isRight()) {

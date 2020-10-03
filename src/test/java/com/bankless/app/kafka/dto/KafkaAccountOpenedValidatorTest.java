@@ -30,7 +30,7 @@ class KafkaAccountOpenedValidatorTest {
 	@DisplayName("Validator should report errors for all fields at once")
 	void invalidEvent() {
 
-		String plainEvent = "2020-50-50;COL;ac8100001;bal50000";
+		String plainEvent = "2020-50;COL;ac8100001;bal50000";
 		Validation<Seq<String>, KafkaAccountOpenedEvent> result = KafkaAccountOpenedValidator
 				.validateAccountOpenedEvent(plainEvent);
 
@@ -44,12 +44,12 @@ class KafkaAccountOpenedValidatorTest {
 	@DisplayName("Validator should allow an event with valid values")
 	void validEvent() {
 
-		String plainEvent = "2020-10-02 14:25:00;USA;8100001;2800000";
+		String plainEvent = "2020-10-02T14:25:00.458;USA;8100001;2800000";
 		Validation<Seq<String>, KafkaAccountOpenedEvent> result = KafkaAccountOpenedValidator
 				.validateAccountOpenedEvent(plainEvent);
 
 		assertTrue(result.isValid());
-		assertEquals("2020-10-02 14:25:00", result.get().getDateTime());
+		assertEquals("2020-10-02T14:25:00.458", result.get().getDateTime());
 		assertEquals("USA", result.get().getCountryCode());
 		assertEquals("8100001", result.get().getNo());
 		assertEquals("2800000", result.get().getBalance());

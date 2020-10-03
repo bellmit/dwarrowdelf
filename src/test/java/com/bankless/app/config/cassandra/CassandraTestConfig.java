@@ -1,8 +1,8 @@
 package com.bankless.app.config.cassandra;
 
-import com.datastax.oss.driver.shaded.guava.common.collect.Lists;
 import com.datastax.driver.core.AuthProvider;
 import com.datastax.driver.core.PlainTextAuthProvider;
+import com.datastax.oss.driver.shaded.guava.common.collect.Lists;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
@@ -14,13 +14,13 @@ import org.springframework.data.cassandra.core.cql.keyspace.DataCenterReplicatio
 import java.util.List;
 
 @Configuration
-@Profile("local")
-@Import({ CassandraConfigProperties.class })
-public class CassandraConfig extends AbstractCassandraConfiguration {
+@Profile("test")
+@Import({ CassandraTestConfigProperties.class })
+public class CassandraTestConfig extends AbstractCassandraConfiguration {
 
 	protected final CassandraConfigProperties props;
 
-	protected CassandraConfig(CassandraConfigProperties cassandraConfigProperties) {
+	protected CassandraTestConfig(CassandraConfigProperties cassandraConfigProperties) {
 		this.props = cassandraConfigProperties;
 	}
 

@@ -2,6 +2,8 @@ package com.bankless.app.http;
 
 import com.bankless.app.http.dto.AccountResponse;
 import com.bankless.app.http.dto.BaseResponse;
+import com.bankless.app.kafka.AccountOpenedPublisher;
+import com.bankless.app.kafka.dto.KafkaAccountOpenedEvent;
 import com.bankless.domain.model.Account;
 import com.bankless.domain.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class AccountController {
 	@Autowired
 	private AccountRepository accountRepository;
 
+	@Autowired
+	private AccountOpenedPublisher accountOpenedPublisher;
+
 	@RequestMapping(value = "{country}/account", method = RequestMethod.GET)
 	public ResponseEntity findAccount(@PathVariable(name = "country") String countryCode,
 			@RequestParam("no") int accountNo) {
@@ -25,6 +30,11 @@ public class AccountController {
 		Optional<Account> result = accountRepository.find(countryCode, accountNo);
 		if (result.isPresent()) {
 			AccountResponse response = new AccountResponse(LocalDateTime.now().toString(), result.get());
+
+			KafkaAccountOpenedEvent event = new KafkaAccountOpenedEvent(response.getDateTime(),
+				response.getAccount().getCountryCode(), String.valueOf(response.getAccount().getNo()), Double.toString(response.getAccount().getBalance()));
+			accountOpenedPublisher.publish( event );
+
 			return new ResponseEntity<AccountResponse>(response, HttpStatus.OK);
 		}
 		else {

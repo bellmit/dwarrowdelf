@@ -51,8 +51,10 @@ select * from accounts;
 
 ```
 # consume events in console
-./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \ 
 --consumer-property group.id=local-consumer-group --topic local-embedded-topic --from-beginning
+./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \
+--consumer-property group.id=local-consumer-group --topic local-account-opened --from-beginning
 
 # produce events from console
 ./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic local-embedded-topic
@@ -70,5 +72,6 @@ Base URL: `http://localhost:8080`. Endpoints described in:
 * [Code formatting](https://github.com/spring-io/spring-javaformat)
 * [Lombok](https://projectlombok.org/features/all)
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
+* [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
 * [Swagger](https://editor.swagger.io/)
 * [Vavr](https://www.vavr.io/vavr-docs/)

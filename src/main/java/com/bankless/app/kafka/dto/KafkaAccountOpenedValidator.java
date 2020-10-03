@@ -14,7 +14,7 @@ import static io.vavr.API.*;
 
 public abstract class KafkaAccountOpenedValidator {
 
-	private static final String DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
+	private static final String DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
 

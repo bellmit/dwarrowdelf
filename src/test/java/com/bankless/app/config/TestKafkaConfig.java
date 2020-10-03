@@ -1,11 +1,9 @@
 package com.bankless.app.config;
 
-import com.bankless.app.kafka.dto.KafkaAccountOpenedEvent;
 import kafka.server.KafkaConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -19,8 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@Profile("local")
-public class LocalKafkaConfig {
+@Profile("test")
+public class TestKafkaConfig {
 
 	@Value("${spring.kafka.server.port}")
 	private int serverPort;
@@ -32,7 +30,7 @@ public class LocalKafkaConfig {
 	public EmbeddedKafkaBroker embeddedKafkaBroker() {
 
 		String[] topics = kafkaTopics.split("\\s*,\\s*");
-		Map<String, String> brokerProps = Collections.singletonMap(KafkaConfig.LogDirProp(), "logs/kafka-local");
+		Map<String, String> brokerProps = Collections.singletonMap(KafkaConfig.LogDirProp(), "logs/kafka-test");
 
 		return new EmbeddedKafkaBroker(1, true, 2, topics).kafkaPorts(serverPort).brokerProperties(brokerProps);
 
@@ -50,6 +48,7 @@ public class LocalKafkaConfig {
 
 	}
 
+	//@SuppressWarnings({"rawtypes", "unchecked"})
 	@Bean
 	public KafkaTemplate<String, String> kafkaTemplate( ProducerFactory<String, String> kafkaProducerFactory) {
 

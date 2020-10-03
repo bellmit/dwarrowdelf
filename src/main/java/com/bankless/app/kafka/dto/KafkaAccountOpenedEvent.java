@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.text.SimpleDateFormat;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,6 +23,10 @@ public class KafkaAccountOpenedEvent {
 	public String toString() {
 		return "KafkaAccountOpenedEvent{" + "dateTime='" + dateTime + '\'' + ", countryCode='" + countryCode + '\''
 				+ ", no='" + no + '\'' + ", balance='" + balance + '\'' + '}';
+	}
+
+	public String toCsv() {
+		return String.format( "%s;%s;%s;%s", dateTime, countryCode, no, balance);
 	}
 
 }
