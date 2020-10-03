@@ -48,9 +48,8 @@ public class TestKafkaConfig {
 
 	}
 
-	//@SuppressWarnings({"rawtypes", "unchecked"})
 	@Bean
-	public KafkaTemplate<String, String> kafkaTemplate( ProducerFactory<String, String> kafkaProducerFactory) {
+	public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> kafkaProducerFactory) {
 
 		KafkaTemplate<String, String> kafkaTemplate = new KafkaTemplate<>(kafkaProducerFactory);
 		return kafkaTemplate;

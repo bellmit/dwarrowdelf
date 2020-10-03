@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -21,6 +22,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
@@ -28,33 +31,42 @@ import java.util.Map;
 @ActiveProfiles({ "test" })
 public class StatusControllerTests {
 
+	@Value("${local.server.port}")
+	private int serverPort;
+
 	private TestRestTemplate restTemplate = new TestRestTemplate();
 
-	private ResponseEntity<String> getAccount(String countryCode, String accountNo) {
+	private ResponseEntity<String> getAccount(String countryCode, String accountNo) throws URISyntaxException {
+
+		String url = "http://localhost:" + serverPort + "/{country}/account?no={accountNo}";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
 		HttpEntity<?> entity = new HttpEntity<>(headers);
 
-		Map<String, String> params = ImmutableMap.of("country", countryCode);
-		UriComponentsBuilder builder = UriComponentsBuilder.fromPath("/{country}/account");
-		builder.queryParam("no", accountNo);
+		Map<String, String> params = ImmutableMap.of("country", countryCode, "accountNo", accountNo);
 
-		return restTemplate.exchange(builder.build(params), HttpMethod.GET, entity, String.class);
+		return restTemplate.exchange(url, HttpMethod.GET, entity, String.class, params);
 
 	}
 
 	@Test
-	public void contextLoads() {
-	}
+	@DisplayName("GET account should return status code 200")
+	public void getAccount_Found() throws Exception {
 
-	@Test
-	@DisplayName("GET status should be successful")
-	public void getAccount() throws Exception {
-
-		ResponseEntity<String> response = getAccount( "USA", "80001");
-
+		ResponseEntity<String> response = getAccount("CAN", "90001");
 		assertEquals(HttpStatus.OK, response.getStatusCode());
+		System.out.println(response.getBody());
+
+	}
+
+	@Test
+	@DisplayName("GET account should return status code 200")
+	public void getAccount_NotFound() throws Exception {
+
+		ResponseEntity<String> response = getAccount("COL", "90123");
+		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+		System.out.println(response.getBody());
 
 	}
 

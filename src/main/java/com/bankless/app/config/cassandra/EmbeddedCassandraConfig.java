@@ -15,13 +15,13 @@ import java.util.List;
 
 @Configuration
 @Profile("local")
-@Import({ CassandraConfigProperties.class })
-public class CassandraConfig extends AbstractCassandraConfiguration {
+@Import({ EmbeddedCassandraProperties.class })
+public class EmbeddedCassandraConfig extends AbstractCassandraConfiguration {
 
-	protected final CassandraConfigProperties props;
+	protected final EmbeddedCassandraProperties props;
 
-	protected CassandraConfig(CassandraConfigProperties cassandraConfigProperties) {
-		this.props = cassandraConfigProperties;
+	protected EmbeddedCassandraConfig(EmbeddedCassandraProperties embeddedCassandraProperties) {
+		this.props = embeddedCassandraProperties;
 	}
 
 	protected String getKeyspaceName() {

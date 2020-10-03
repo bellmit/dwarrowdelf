@@ -26,7 +26,7 @@ public class KafkaAccountOpenedEvent {
 	}
 
 	public String toCsv() {
-		return String.format( "%s;%s;%s;%s", dateTime, countryCode, no, balance);
+		return String.format("%s;%s;%s;%s", dateTime, countryCode, no, balance);
 	}
 
 }

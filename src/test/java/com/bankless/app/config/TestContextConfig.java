@@ -1,5 +1,7 @@
 package com.bankless.app.config;
 
+import com.bankless.app.kafka.AccountOpenedPublisher;
+import com.bankless.app.kafka.AccountOpenedSubscriber;
 import com.bankless.domain.repository.AccountRepository;
 import com.bankless.infrastructure.persistence.cassandra.repository.AccountCassandraRepo;
 import com.bankless.infrastructure.repository.AccountRepositoryInCassandra;
@@ -20,6 +22,16 @@ public class TestContextConfig {
 	AccountRepository bindAccountRepository(AccountCassandraRepo accountCassandraRepo) {
 		LOGGER.info("Binding account repository to test context");
 		return new AccountRepositoryInCassandra(accountCassandraRepo);
+	}
+
+	@Bean
+	public AccountOpenedSubscriber bindAccountOpenedSubscriber() {
+		return new AccountOpenedSubscriber();
+	}
+
+	@Bean
+	public AccountOpenedPublisher bindAccountOpenedPublisher() {
+		return new AccountOpenedPublisher();
 	}
 
 }

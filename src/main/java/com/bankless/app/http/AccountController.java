@@ -32,8 +32,9 @@ public class AccountController {
 			AccountResponse response = new AccountResponse(LocalDateTime.now().toString(), result.get());
 
 			KafkaAccountOpenedEvent event = new KafkaAccountOpenedEvent(response.getDateTime(),
-				response.getAccount().getCountryCode(), String.valueOf(response.getAccount().getNo()), Double.toString(response.getAccount().getBalance()));
-			accountOpenedPublisher.publish( event );
+					response.getAccount().getCountryCode(), String.valueOf(response.getAccount().getNo()),
+					Double.toString(response.getAccount().getBalance()));
+			accountOpenedPublisher.publish(event);
 
 			return new ResponseEntity<AccountResponse>(response, HttpStatus.OK);
 		}

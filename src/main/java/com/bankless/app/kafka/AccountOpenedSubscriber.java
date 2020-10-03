@@ -18,8 +18,6 @@ import java.util.List;
 
 import static io.vavr.API.*;
 
-@Component
-@Profile("local")
 public class AccountOpenedSubscriber {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AccountOpenedSubscriber.class);
