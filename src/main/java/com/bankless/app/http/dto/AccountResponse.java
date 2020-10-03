@@ -1,4 +1,4 @@
-package com.bankless.app.dto;
+package com.bankless.app.http.dto;
 
 import com.bankless.domain.model.Account;
 import lombok.AllArgsConstructor;
@@ -8,10 +8,10 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class AccountResponseDto {
+public class AccountResponse {
 
-	String dateTime;
+	private String dateTime;
 
-	Account account;
+	private Account account;
 
 }

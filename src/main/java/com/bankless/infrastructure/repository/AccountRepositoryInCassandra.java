@@ -1,6 +1,5 @@
 package com.bankless.infrastructure.repository;
 
-import com.bankless.app.config.cassandra.CassandraUnitConfig;
 import com.bankless.domain.model.Account;
 import com.bankless.domain.repository.AccountRepository;
 import com.bankless.infrastructure.persistence.cassandra.repository.AccountCassandraRepo;
