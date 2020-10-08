@@ -16,6 +16,12 @@ java -jar target/bankless-java-0.1.0.jar
 ./mvnw spring-javaformat:apply
 ```
 
+## Tests
+
+* `@Tag("unit")`
+* `@Tag("component")`
+* Deployment tests are tagged with `@SpringBootTest` and `@ActiveProfiles({ "test" })`
+
 ## Cassandra
 
 #### Tables
