@@ -1,4 +1,4 @@
-# bankless
+# erebor
 
 
 ## Console
@@ -10,7 +10,7 @@
 
 # run .jar file
 ./mvnw package
-java -jar target/bankless-java-0.1.0.jar
+java -jar target/erebor-java-0.1.0.jar
 
 # format code
 ./mvnw spring-javaformat:apply
@@ -33,7 +33,7 @@ java -jar target/bankless-java-0.1.0.jar
 ```
 # connect to embedded Cassandra
 export CQLSH_PORT=9042 ; export CQLSH_HOST=127.0.0.1 ; ./cqlsh -u cassandra -p cassandra
-expand on; use bankless;
+expand on; use erebor;
 
 # queries
 select * from accounts;
@@ -70,8 +70,8 @@ select * from accounts;
 ## HTTP
 
 Base URL: `http://localhost:8080`. Endpoints described in:
-- `postman/bankless-java.postman_collection`
-- `swagger/bankless-java.yaml`
+- `postman/erebor-java.postman_collection`
+- `swagger/erebor-java.yaml`
 
 ## References
 
