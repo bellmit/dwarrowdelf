@@ -1,7 +1,13 @@
-# erebor
+# dwarrowdef
 
+## Table of contents
 
-## Console
+* [commands](#commands)
+* [wip](#wip)
+* [backlog](#backlog)
+* [references](#references)
+
+### commands
 
 ```
 # run local
@@ -16,19 +22,41 @@ java -jar target/erebor-java-0.1.0.jar
 ./mvnw spring-javaformat:apply
 ```
 
-## Tests
+### wip
+
+- coverage
+
+### backlog
+
+- micrometer
+- rest client / template
+- rabbitMQ
+- elasticsearch
+- logging context
+- circuit breakers
+- cache
+- request filters
+- modules
+
+### references
+
+* [Code formatting](https://github.com/spring-io/spring-javaformat)
+* [Lombok](https://projectlombok.org/features/all)
+* [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
+* [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
+* [Swagger](https://editor.swagger.io/)
+* [Vavr](https://www.vavr.io/vavr-docs/)
+
+
+### to be defined
+
+**Tests**
 
 * `@Tag("unit")`
 * `@Tag("component")`
 * Deployment tests are tagged with `@SpringBootTest` and `@ActiveProfiles({ "test" })`
 
-## Cassandra
-
-#### Tables
-
-- accounts
-
-#### Console
+**Cassandra**
 
 ```
 # connect to embedded Cassandra
@@ -39,16 +67,12 @@ expand on; use erebor;
 select * from accounts;
 ```
 
-## Kafka
-
-#### Console
-
-#### Topics
+**Kafka Topics**
 
 - local-embedded-topic
 - local-account-opened
 
-#### Events
+**Events**
 
 ```
 # local-account-opened
@@ -67,17 +91,9 @@ select * from accounts;
 ./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic local-account-opened
 ```
 
-## HTTP
+**HTTP**
 
 Base URL: `http://localhost:8080`. Endpoints described in:
 - `postman/erebor-java.postman_collection`
 - `swagger/erebor-java.yaml`
 
-## References
-
-* [Code formatting](https://github.com/spring-io/spring-javaformat)
-* [Lombok](https://projectlombok.org/features/all)
-* [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
-* [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
-* [Swagger](https://editor.swagger.io/)
-* [Vavr](https://www.vavr.io/vavr-docs/)
