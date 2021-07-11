@@ -1,0 +1,1292 @@
+2021-07-08 22:21:11.760  INFO 55487 --- [main] c.e.a.controller.StatusControllerTests   : Starting StatusControllerTests on grayfox.local with PID 55487 (started by kmell in /Users/kmell/ideaprojects/km3ll/dwarrowdelf)
+2021-07-08 22:21:11.762  INFO 55487 --- [main] c.e.a.controller.StatusControllerTests   : The following profiles are active: test
+2021-07-08 22:21:12.386  INFO 55487 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-07-08 22:21:12.440  INFO 55487 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 1 repository interfaces.
+2021-07-08 22:21:12.625  INFO 55487 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-07-08 22:21:12.635  INFO 55487 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2021-07-08 22:21:13.011  INFO 55487 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method EmbeddedCassandraTestServerConfig.cassandraUnitTest is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2021-07-08 22:21:13.022  INFO 55487 --- [main] .a.c.c.EmbeddedCassandraTestServerConfig : Starting test embedded Cassandra
+2021-07-08 22:21:13.056  INFO 55487 --- [main] o.a.c.config.YamlConfigurationLoader     : Configuration location: file:/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/embeddedCassandra/cu-cassandra.yaml
+2021-07-08 22:21:13.150  INFO 55487 --- [main] org.apache.cassandra.config.Config       : Node configuration:[allocate_tokens_for_keyspace=null; authenticator=AllowAllAuthenticator; authorizer=AllowAllAuthorizer; auto_bootstrap=true; auto_snapshot=false; back_pressure_enabled=false; back_pressure_strategy=null; batch_size_fail_threshold_in_kb=50; batch_size_warn_threshold_in_kb=5; batchlog_replay_throttle_in_kb=1024; broadcast_address=null; broadcast_rpc_address=null; buffer_pool_use_heap_if_exhausted=true; cas_contention_timeout_in_ms=1000; cdc_enabled=false; cdc_free_space_check_interval_ms=250; cdc_raw_directory=target/embeddedCassandra/cdc; cdc_total_space_in_mb=0; client_encryption_options=<REDACTED>; cluster_name=Test Cluster; column_index_cache_size_in_kb=2; column_index_size_in_kb=64; commit_failure_policy=stop; commitlog_compression=null; commitlog_directory=target/embeddedCassandra/commitlog; commitlog_max_compression_buffers_in_pool=3; commitlog_periodic_queue_size=-1; commitlog_segment_size_in_mb=32; commitlog_sync=periodic; commitlog_sync_batch_window_in_ms=NaN; commitlog_sync_period_in_ms=10000; commitlog_total_space_in_mb=null; compaction_large_partition_warning_threshold_mb=100; compaction_throughput_mb_per_sec=16; concurrent_compactors=null; concurrent_counter_writes=32; concurrent_materialized_view_writes=32; concurrent_reads=32; concurrent_replicates=null; concurrent_writes=32; counter_cache_keys_to_save=2147483647; counter_cache_save_period=7200; counter_cache_size_in_mb=null; counter_write_request_timeout_in_ms=5000; credentials_cache_max_entries=1000; credentials_update_interval_in_ms=-1; credentials_validity_in_ms=2000; cross_node_timeout=false; data_file_directories=[Ljava.lang.String;@5ad5be4a; disk_access_mode=auto; disk_failure_policy=stop; disk_optimization_estimate_percentile=0.95; disk_optimization_page_cross_chance=0.1; disk_optimization_strategy=ssd; dynamic_snitch=true; dynamic_snitch_badness_threshold=0.1; dynamic_snitch_reset_interval_in_ms=600000; dynamic_snitch_update_interval_in_ms=100; enable_materialized_views=true; enable_scripted_user_defined_functions=false; enable_user_defined_functions=false; enable_user_defined_functions_threads=true; encryption_options=org.apache.cassandra.config.EncryptionOptions$ServerEncryptionOptions@737d100a; endpoint_snitch=SimpleSnitch; file_cache_round_up=null; file_cache_size_in_mb=null; gc_log_threshold_in_ms=200; gc_warn_threshold_in_ms=0; hinted_handoff_disabled_datacenters=[]; hinted_handoff_enabled=true; hinted_handoff_throttle_in_kb=1024; hints_compression=null; hints_directory=target/embeddedCassandra/hints; hints_flush_period_in_ms=10000; incremental_backups=false; index_interval=128; index_summary_capacity_in_mb=null; index_summary_resize_interval_in_minutes=60; initial_token=null; inter_dc_stream_throughput_outbound_megabits_per_sec=200; inter_dc_tcp_nodelay=true; internode_authenticator=null; internode_compression=none; internode_recv_buff_size_in_bytes=0; internode_send_buff_size_in_bytes=0; key_cache_keys_to_save=2147483647; key_cache_save_period=14400; key_cache_size_in_mb=null; listen_address=127.0.0.1; listen_interface=null; listen_interface_prefer_ipv6=false; listen_on_broadcast_address=false; max_hint_window_in_ms=10800000; max_hints_delivery_threads=2; max_hints_file_size_in_mb=128; max_mutation_size_in_kb=null; max_streaming_retries=3; max_value_size_in_mb=256; memtable_allocation_type=heap_buffers; memtable_cleanup_threshold=null; memtable_flush_writers=0; memtable_heap_space_in_mb=null; memtable_offheap_space_in_mb=null; min_free_space_per_drive_in_mb=50; native_transport_max_concurrent_connections=-1; native_transport_max_concurrent_connections_per_ip=-1; native_transport_max_frame_size_in_mb=256; native_transport_max_threads=128; native_transport_port=9142; native_transport_port_ssl=null; num_tokens=1; otc_backlog_expiration_interval_ms=200; otc_coalescing_enough_coalesced_messages=8; otc_coalescing_strategy=DISABLED; otc_coalescing_window_us=200; partitioner=org.apache.cassandra.dht.Murmur3Partitioner; permissions_cache_max_entries=1000; permissions_update_interval_in_ms=-1; permissions_validity_in_ms=2000; phi_convict_threshold=8.0; prepared_statements_cache_size_mb=null; range_request_timeout_in_ms=10000; read_request_timeout_in_ms=5000; request_scheduler=org.apache.cassandra.scheduler.NoScheduler; request_scheduler_id=null; request_scheduler_options=null; request_timeout_in_ms=10000; role_manager=null; roles_cache_max_entries=1000; roles_update_interval_in_ms=-1; roles_validity_in_ms=2000; row_cache_class_name=org.apache.cassandra.cache.OHCProvider; row_cache_keys_to_save=2147483647; row_cache_save_period=0; row_cache_size_in_mb=0; rpc_address=localhost; rpc_interface=null; rpc_interface_prefer_ipv6=false; rpc_keepalive=true; rpc_listen_backlog=50; rpc_max_threads=2147483647; rpc_min_threads=16; rpc_port=9171; rpc_recv_buff_size_in_bytes=null; rpc_send_buff_size_in_bytes=null; rpc_server_type=sync; saved_caches_directory=target/embeddedCassandra/saved_caches; seed_provider=org.apache.cassandra.locator.SimpleSeedProvider{seeds=127.0.0.1}; server_encryption_options=<REDACTED>; slow_query_log_timeout_in_ms=500; snapshot_before_compaction=false; ssl_storage_port=7011; sstable_preemptive_open_interval_in_mb=50; start_native_transport=true; start_rpc=true; storage_port=7010; stream_throughput_outbound_megabits_per_sec=200; streaming_keep_alive_period_in_secs=300; streaming_socket_timeout_in_ms=86400000; thrift_framed_transport_size_in_mb=15; thrift_max_message_length_in_mb=16; thrift_prepared_statements_cache_size_mb=null; tombstone_failure_threshold=100000; tombstone_warn_threshold=1000; tracetype_query_ttl=86400; tracetype_repair_ttl=604800; transparent_data_encryption_options=org.apache.cassandra.config.TransparentDataEncryptionOptions@3ad85136; trickle_fsync=false; trickle_fsync_interval_in_kb=10240; truncate_request_timeout_in_ms=60000; unlogged_batch_across_partitions_warn_threshold=10; user_defined_function_fail_timeout=1500; user_defined_function_warn_timeout=500; user_function_timeout_policy=die; windows_timer_interval=0; write_request_timeout_in_ms=2000]
+2021-07-08 22:21:13.150  INFO 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
+2021-07-08 22:21:13.150  INFO 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : Global memtable on-heap threshold is enabled at 455MB
+2021-07-08 22:21:13.150  INFO 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : Global memtable off-heap threshold is enabled at 455MB
+2021-07-08 22:21:13.308  WARN 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : Only 20.437GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
+2021-07-08 22:21:13.310  WARN 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : index_interval has been deprecated and should be removed from cassandra.yaml
+2021-07-08 22:21:13.311  WARN 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : Please rename encryption_options as server_encryption_options in the yaml
+2021-07-08 22:21:13.356  INFO 55487 --- [main] o.a.cassandra.net.RateBasedBackPressure  : Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000.
+2021-07-08 22:21:13.356  INFO 55487 --- [main] o.a.cassandra.config.DatabaseDescriptor  : Back-pressure is disabled with strategy null.
+2021-07-08 22:21:13.569  INFO 55487 --- [main] o.a.cassandra.db.commitlog.CommitLog     : No commitlog files found; skipping replay
+2021-07-08 22:21:13.585  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Hostname: grayfox.local
+2021-07-08 22:21:13.585  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : JVM vendor/version: Java HotSpot(TM) 64-Bit Server VM/1.8.0_202
+2021-07-08 22:21:13.586  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Heap size: 306.000MiB/1.778GiB
+2021-07-08 22:21:13.587  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Code Cache Non-heap memory: init = 2555904(2496K) used = 11446016(11177K) committed = 11534336(11264K) max = 251658240(245760K)
+2021-07-08 22:21:13.587  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Metaspace Non-heap memory: init = 0(0K) used = 43058952(42049K) committed = 45481984(44416K) max = -1(-1K)
+2021-07-08 22:21:13.588  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Compressed Class Space Non-heap memory: init = 0(0K) used = 5673624(5540K) committed = 6160384(6016K) max = 1073741824(1048576K)
+2021-07-08 22:21:13.588  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Eden Space Heap memory: init = 34078720(33280K) used = 136314880(133120K) committed = 232783872(227328K) max = 705167360(688640K)
+2021-07-08 22:21:13.588  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Survivor Space Heap memory: init = 5242880(5120K) used = 8023016(7834K) committed = 8388608(8192K) max = 8388608(8192K)
+2021-07-08 22:21:13.588  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Old Gen Heap memory: init = 89653248(87552K) used = 15023816(14671K) committed = 89653248(87552K) max = 1431830528(1398272K)
+2021-07-08 22:21:13.588  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Classpath: /Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/test-classes:/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/classes:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/spring-boot-starter-web-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar:/Users/kmell/.m2/repository/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/kmell/.m2/repository/org/yaml/snakeyaml/1.25/snakeyaml-1.25.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.2.1.RELEASE/spring-boot-starter-json-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0/jackson-datatype-jdk8-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.0/jackson-datatype-jsr310-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.10.0/jackson-module-parameter-names-2.10.0.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.2.1.RELEASE/spring-boot-starter-tomcat-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.27/tomcat-embed-core-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.27/tomcat-embed-el-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.27/tomcat-embed-websocket-9.0.27.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-validation/2.2.1.RELEASE/spring-boot-starter-validation-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar:/Users/kmell/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.18.Final/hibernate-validator-6.0.18.Final.jar:/Users/kmell/.m2/repository/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar:/Users/kmell/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/kmell/.m2/repository/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-beans/5.2.1.RELEASE/spring-beans-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-aop/5.2.1.RELEASE/spring-aop-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-expression/5.2.1.RELEASE/spring-expression-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.2.1.RELEASE/spring-boot-starter-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test/2.2.1.RELEASE/spring-boot-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.2.1.RELEASE/spring-boot-test-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/Users/kmell/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.2/junit-jupiter-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/vintage/junit-vintage-engine/5.5.2/junit-vintage-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/Users/kmell/.m2/repository/org/mockito/mockito-junit-jupiter/3.1.0/mockito-junit-jupiter-3.1.0.jar:/Users/kmell/.m2/repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/kmell/.m2/repository/org/mockito/mockito-core/3.1.0/mockito-core-3.1.0.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.2/byte-buddy-agent-1.10.2.jar:/Users/kmell/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/Users/kmell/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/Users/kmell/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/kmell/.m2/repository/org/springframework/spring-core/5.2.1.RELEASE/spring-core-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-test/5.2.1.RELEASE/spring-test-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/xmlunit/xmlunit-core/2.6.3/xmlunit-core-2.6.3.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-data-cassandra/2.2.1.RELEASE/spring-boot-starter-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-tx/5.2.1.RELEASE/spring-tx-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-cassandra/2.2.1.RELEASE/spring-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-commons/2.2.1.RELEASE/spring-data-commons-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.7.2/cassandra-driver-core-3.7.2.jar:/Users/kmell/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/Users/kmell/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/Users/kmell/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/Users/kmell/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:/Users/kmell/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar:/Users/kmell/.m2/repository/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar:/Users/kmell/.m2/repository/io/vavr/vavr/0.10.2/vavr-0.10.2.jar:/Users/kmell/.m2/repository/io/vavr/vavr-match/0.10.2/vavr-match-0.10.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-core/4.2.2/java-driver-core-4.2.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/native-protocol/1.4.7/native-protocol-1.4.7.jar:/Users/kmell/.m2/repository/io/netty/netty-handler/4.1.43.Final/netty-handler-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-common/4.1.43.Final/netty-common-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-buffer/4.1.43.Final/netty-buffer-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-transport/4.1.43.Final/netty-transport-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-resolver/4.1.43.Final/netty-resolver-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-codec/4.1.43.Final/netty-codec-4.1.43.Final.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-shaded-guava/25.1-jre/java-driver-shaded-guava-25.1-jre.jar:/Users/kmell/.m2/repository/com/typesafe/config/1.3.4/config-1.3.4.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-ffi/2.1.10/jnr-ffi-2.1.10.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19-native.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-commons/7.1/asm-commons-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-analysis/7.1/asm-analysis-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-tree/7.1/asm-tree-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-util/7.1/asm-util-7.1.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-posix/3.0.50/jnr-posix-3.0.50.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-constants/0.9.12/jnr-constants-0.9.12.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.1/metrics-core-4.1.1.jar:/Users/kmell/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11.jar:/Users/kmell/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/kmell/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.12/spotbugs-annotations-3.1.12.jar:/Users/kmell/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/kmell/.m2/repository/org/cassandraunit/cassandra-unit/3.5.0.1/cassandra-unit-3.5.0.1.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-all/3.11.2/cassandra-all-3.11.2.jar:/Users/kmell/.m2/repository/org/xerial/snappy/snappy-java/1.1.1.7/snappy-java-1.1.1.7.jar:/Users/kmell/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/Users/kmell/.m2/repository/com/ning/compress-lzf/0.8.4/compress-lzf-0.8.4.jar:/Users/kmell/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/Users/kmell/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar:/Users/kmell/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar:/Users/kmell/.m2/repository/org/antlr/antlr/3.5.2/antlr-3.5.2.jar:/Users/kmell/.m2/repository/org/antlr/ST4/4.0.8/ST4-4.0.8.jar:/Users/kmell/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/kmell/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.29/jcl-over-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/Users/kmell/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/kmell/.m2/repository/com/boundary/high-scale-lib/1.0.6/high-scale-lib-1.0.6.jar:/Users/kmell/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.1.1/metrics-jvm-4.1.1.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config3/3.0.3/reporter-config3-3.0.3.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.3/reporter-config-base-3.0.3.jar:/Users/kmell/.m2/repository/com/thinkaurelius/thrift/thrift-server/0.3.7/thrift-server-0.3.7.jar:/Users/kmell/.m2/repository/com/lmax/disruptor/3.0.1/disruptor-3.0.1.jar:/Users/kmell/.m2/repository/com/clearspring/analytics/stream/2.5.2/stream-2.5.2.jar:/Users/kmell/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-thrift/3.11.2/cassandra-thrift-3.11.2.jar:/Users/kmell/.m2/repository/com/carrotsearch/hppc/0.5.4/hppc-0.5.4.jar:/Users/kmell/.m2/repository/de/jflex/jflex/1.6.0/jflex-1.6.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/Users/kmell/.m2/repository/com/github/rholder/snowball-stemmer/1.3.0.581.1/snowball-stemmer-1.3.0.581.1.jar:/Users/kmell/.m2/repository/com/googlecode/concurrent-trees/concurrent-trees/2.4.0/concurrent-trees-2.4.0.jar:/Users/kmell/.m2/repository/com/github/jbellis/jamm/0.3.0/jamm-0.3.0.jar:/Users/kmell/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/kmell/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/kmell/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar:/Users/kmell/.m2/repository/org/caffinitas/ohc/ohc-core/0.4.4/ohc-core-0.4.4.jar:/Users/kmell/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.0/caffeine-2.8.0.jar:/Users/kmell/.m2/repository/org/checkerframework/checker-qual/2.10.0/checker-qual-2.10.0.jar:/Users/kmell/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.3/error_prone_annotations-2.3.3.jar:/Users/kmell/.m2/repository/org/jctools/jctools-core/1.2.1/jctools-core-1.2.1.jar:/Users/kmell/.m2/repository/com/google/guava/guava/21.0/guava-21.0.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/kmell/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpclient/4.5.10/httpclient-4.5.10.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpcore/4.4.12/httpcore-4.4.12.jar:/Users/kmell/.m2/repository/net/java/dev/jna/jna/4.5.2/jna-4.5.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-library/2.1/hamcrest-library-2.1.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka/2.3.3.RELEASE/spring-kafka-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1.jar:/Users/kmell/.m2/repository/com/github/luben/zstd-jni/1.4.0-1/zstd-jni-1.4.0-1.jar:/Users/kmell/.m2/repository/org/lz4/lz4-java/1.6.0/lz4-java-1.6.0.jar:/Users/kmell/.m2/repository/org/springframework/retry/spring-retry/1.2.4.RELEASE/spring-retry-1.2.4.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-context/5.2.1.RELEASE/spring-context-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-messaging/5.2.1.RELEASE/spring-messaging-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka-test/2.3.3.RELEASE/spring-kafka-test-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1-test.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams/2.3.1/kafka-streams-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-json/2.3.1/connect-json-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-api/2.3.1/connect-api-2.3.1.jar:/Users/kmell/.m2/repository/org/rocksdb/rocksdbjni/5.18.3/rocksdbjni-5.18.3.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams-test-utils/2.3.1/kafka-streams-test-utils-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.10.0/jackson-module-scala_2.12-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-paranamer/2.10.0/jackson-module-paranamer-2.10.0.jar:/Users/kmell/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.10.0/jackson-dataformat-csv-2.10.0.jar:/Users/kmell/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/kmell/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-library/2.12.8/scala-library-2.12.8.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-reflect/2.12.8/scala-reflect-2.12.8.jar:/Users/kmell/.m2/repository/com/typesafe/scala-logging/scala-logging_2.12/3.9.0/scala-logging_2.12-3.9.0.jar:/Users/kmell/.m2/repository/com/101tec/zkclient/0.11/zkclient-0.11.jar:/Users/kmell/.m2/repository/org/apache/zookeeper/zookeeper/3.4.14/zookeeper-3.4.14.jar:/Users/kmell/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1-test.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/kmell/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:
+2021-07-08 22:21:13.589  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : JVM Arguments: []
+2021-07-08 22:21:13.590  WARN 55487 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : jemalloc shared library could not be preloaded to speed up memory allocations
+2021-07-08 22:21:13.590  WARN 55487 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info.
+2021-07-08 22:21:13.590 ERROR 55487 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : cassandra.jmx.local.port missing from cassandra-env.sh, unable to start local JMX service.
+2021-07-08 22:21:13.591  WARN 55487 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : The JVM is not configured to stop on OutOfMemoryError which can cause data corruption. Use one of the following JVM options to configure the behavior on OutOfMemoryError:  -XX:+ExitOnOutOfMemoryError, -XX:+CrashOnOutOfMemoryError, or -XX:OnOutOfMemoryError="<cmd args>;<cmd args>"
+2021-07-08 22:21:13.594  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Initializing SIGAR library
+2021-07-08 22:21:13.626  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Could not initialize SIGAR library org.hyperic.sigar.Sigar.getFileSystemListNative()[Lorg/hyperic/sigar/FileSystem; 
+2021-07-08 22:21:13.626  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Sigar could not be initialized, test for checking degraded mode omitted.
+2021-07-08 22:21:13.771  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.cql3.QueryProcessor   : Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift)
+2021-07-08 22:21:14.554  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.IndexInfo
+2021-07-08 22:21:15.339  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.batches
+2021-07-08 22:21:15.345  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.paxos
+2021-07-08 22:21:15.355  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.local
+2021-07-08 22:21:15.361  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.peers
+2021-07-08 22:21:15.366  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.peer_events
+2021-07-08 22:21:15.371  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.range_xfers
+2021-07-08 22:21:15.376  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.compaction_history
+2021-07-08 22:21:15.389  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.sstable_activity
+2021-07-08 22:21:15.395  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.size_estimates
+2021-07-08 22:21:15.402  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.available_ranges
+2021-07-08 22:21:15.409  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.transferred_ranges
+2021-07-08 22:21:15.413  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.views_builds_in_progress
+2021-07-08 22:21:15.417  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.built_views
+2021-07-08 22:21:15.422  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.hints
+2021-07-08 22:21:15.439  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.batchlog
+2021-07-08 22:21:15.444  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.prepared_statements
+2021-07-08 22:21:15.451  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_keyspaces
+2021-07-08 22:21:15.457  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_columnfamilies
+2021-07-08 22:21:15.462  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_columns
+2021-07-08 22:21:15.467  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_triggers
+2021-07-08 22:21:15.471  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_usertypes
+2021-07-08 22:21:15.488  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_functions
+2021-07-08 22:21:15.493  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_aggregates
+2021-07-08 22:21:15.496  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system as storage service is not initialized
+2021-07-08 22:21:15.649  INFO 55487 --- [pool-2-thread-1] o.a.c.db.monitoring.ApproximateTime      : Scheduling approximate time-check task with a precision of 10 milliseconds
+2021-07-08 22:21:15.699  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.keyspaces
+2021-07-08 22:21:15.703  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.tables
+2021-07-08 22:21:15.708  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.columns
+2021-07-08 22:21:15.715  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.triggers
+2021-07-08 22:21:15.720  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.dropped_columns
+2021-07-08 22:21:15.729  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.views
+2021-07-08 22:21:15.734  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.types
+2021-07-08 22:21:15.744  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.functions
+2021-07-08 22:21:15.749  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.aggregates
+2021-07-08 22:21:15.753  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.indexes
+2021-07-08 22:21:15.754  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_schema as storage service is not initialized
+2021-07-08 22:21:15.932  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing key cache with capacity of 15 MBs.
+2021-07-08 22:21:15.949  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing row cache with capacity of 0 MBs
+2021-07-08 22:21:15.952  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing counter cache with capacity of 7 MBs
+2021-07-08 22:21:15.954  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Scheduling counter cache save to every 7200 seconds (going to save all keys).
+2021-07-08 22:21:15.978  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Populating token metadata from system tables
+2021-07-08 22:21:16.007  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Token metadata: 
+2021-07-08 22:21:16.078  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.db.commitlog.CommitLog     : No commitlog files found; skipping replay
+2021-07-08 22:21:16.078  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Populating token metadata from system tables
+2021-07-08 22:21:16.087  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Token metadata: 
+2021-07-08 22:21:16.168  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.cql3.QueryProcessor   : Preloaded 0 prepared statements
+2021-07-08 22:21:16.169  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Cassandra version: 3.11.2
+2021-07-08 22:21:16.170  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Thrift API version: 20.1.0
+2021-07-08 22:21:16.170  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : CQL supported versions: 3.4.4 (default: 3.4.4)
+2021-07-08 22:21:16.170  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4)
+2021-07-08 22:21:16.219  INFO 55487 --- [pool-2-thread-1] o.a.c.io.sstable.IndexSummaryManager     : Initializing index summary manager with a memory pool size of 15 MB and a resize interval of 60 minutes
+2021-07-08 22:21:16.240  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.net.MessagingService  : Starting Messaging Service on /127.0.0.1:7010 (lo0)
+2021-07-08 22:21:16.246  WARN 55487 --- [pool-2-thread-1] org.apache.cassandra.db.SystemKeyspace   : No host ID found, created 7012b37e-dcff-48e6-b568-b319c523e7dd (Note: This should happen exactly once per node).
+2021-07-08 22:21:16.267  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Loading persisted ring state
+2021-07-08 22:21:16.268  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Starting up server gossip
+2021-07-08 22:21:16.297  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : This node will not auto bootstrap because it is configured to be a seed node.
+2021-07-08 22:21:16.305  WARN 55487 --- [pool-2-thread-1] org.apache.cassandra.dht.BootStrapper    : Picking random token for a single vnode.  You should probably add more vnodes and/or use the automatic token allocation mechanism.
+2021-07-08 22:21:16.308  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.dht.BootStrapper    : Generated random tokens. tokens are [1415944743129293214]
+2021-07-08 22:21:16.313  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_traces, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=2}}, tables=[org.apache.cassandra.config.CFMetaData@20d8bc4d[cfId=c5e99f16-8677-3914-b17e-960613512345,ksName=system_traces,cfName=sessions,flags=[COMPOUND],params=TableParams{comment=tracing sessions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [client command coordinator duration request started_at parameters]],partitionKeyColumns=[session_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[client, command, session_id, coordinator, request, started_at, duration, parameters],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@36c3505b[cfId=8826e8e9-e16a-3728-8753-3bc1fc713c25,ksName=system_traces,cfName=events,flags=[COMPOUND],params=TableParams{comment=tracing events, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [activity source source_elapsed thread]],partitionKeyColumns=[session_id],clusteringColumns=[event_id],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[activity, session_id, thread, event_id, source, source_elapsed],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2021-07-08 22:21:16.402  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_traces as storage service is not initialized
+2021-07-08 22:21:16.406  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_traces.events
+2021-07-08 22:21:16.413  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_traces.sessions
+2021-07-08 22:21:16.428  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_distributed, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=3}}, tables=[org.apache.cassandra.config.CFMetaData@bde62a5[cfId=759fffad-624b-3181-80ee-fa9a52d1f627,ksName=system_distributed,cfName=repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [coordinator exception_message exception_stacktrace finished_at parent_id range_begin range_end started_at status participants]],partitionKeyColumns=[keyspace_name, columnfamily_name],clusteringColumns=[id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[status, id, coordinator, finished_at, participants, exception_stacktrace, parent_id, range_end, range_begin, exception_message, keyspace_name, started_at, columnfamily_name],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@70b32b88[cfId=deabd734-b99d-3b9c-92e5-fd92eb5abf14,ksName=system_distributed,cfName=parent_repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [exception_message exception_stacktrace finished_at keyspace_name started_at columnfamily_names options requested_ranges successful_ranges]],partitionKeyColumns=[parent_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.TimeUUIDType,columnMetadata=[requested_ranges, exception_message, keyspace_name, successful_ranges, started_at, finished_at, options, exception_stacktrace, parent_id, columnfamily_names],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@2a130016[cfId=5582b59f-8e4e-35e1-b913-3acada51eb04,ksName=system_distributed,cfName=view_build_status,flags=[COMPOUND],params=TableParams{comment=Materialized View build status, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UUIDType),partitionColumns=[[] | [status]],partitionKeyColumns=[keyspace_name, view_name],clusteringColumns=[host_id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[view_name, status, keyspace_name, host_id],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2021-07-08 22:21:16.447  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized
+2021-07-08 22:21:16.452  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.parent_repair_history
+2021-07-08 22:21:16.457  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.repair_history
+2021-07-08 22:21:16.463  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.view_build_status
+2021-07-08 22:21:16.475  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : JOINING: Finish joining ring
+2021-07-08 22:21:16.512  INFO 55487 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_auth, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[org.apache.cassandra.config.CFMetaData@505d523c[cfId=5bc52802-de25-35ed-aeab-188eecebb090,ksName=system_auth,cfName=roles,flags=[COMPOUND],params=TableParams{comment=role definitions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [can_login is_superuser salted_hash member_of]],partitionKeyColumns=[role],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[salted_hash, member_of, role, can_login, is_superuser],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@63c8a29d[cfId=0ecdaa87-f8fb-3e60-88d1-74fb36fe5c0d,ksName=system_auth,cfName=role_members,flags=[COMPOUND],params=TableParams{comment=role memberships lookup table, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[role],clusteringColumns=[member],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[role, member],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@3a4d9f10[cfId=3afbe79f-2194-31a7-add7-f5ab90d8ec9c,ksName=system_auth,cfName=role_permissions,flags=[COMPOUND],params=TableParams{comment=permissions granted to db roles, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | [permissions]],partitionKeyColumns=[role],clusteringColumns=[resource],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, permissions, role],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@5175a287[cfId=5f2fbdad-91f1-3946-bd25-d5da3a5c35ec,ksName=system_auth,cfName=resource_role_permissons_index,flags=[COMPOUND],params=TableParams{comment=index of db roles with permissions granted on a resource, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[resource],clusteringColumns=[role],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, role],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2021-07-08 22:21:16.532  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_auth as storage service is not initialized
+2021-07-08 22:21:16.538  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.resource_role_permissons_index
+2021-07-08 22:21:16.547  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.role_members
+2021-07-08 22:21:16.552  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.role_permissions
+2021-07-08 22:21:16.558  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.roles
+2021-07-08 22:21:16.795  INFO 55487 --- [pool-2-thread-1] o.a.c.service.NativeTransportService     : Netty using Java NIO event loop
+2021-07-08 22:21:16.914  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.transport.Server    : Using Netty Version: [netty-buffer=netty-buffer-4.1.43.Final.d066f16, netty-codec=netty-codec-4.1.43.Final.d066f16, netty-common=netty-common-4.1.43.Final.d066f16, netty-handler=netty-handler-4.1.43.Final.d066f16, netty-resolver=netty-resolver-4.1.43.Final.d066f16, netty-transport=netty-transport-4.1.43.Final.d066f16]
+2021-07-08 22:21:16.914  INFO 55487 --- [pool-2-thread-1] org.apache.cassandra.transport.Server    : Starting listening for CQL clients on localhost/127.0.0.1:9142 (unencrypted)...
+2021-07-08 22:21:17.056  INFO 55487 --- [pool-2-thread-1] o.apache.cassandra.thrift.ThriftServer   : Binding thrift service to localhost/127.0.0.1:9171
+2021-07-08 22:21:17.075  INFO 55487 --- [Thread-2] o.apache.cassandra.thrift.ThriftServer   : Listening for thrift clients...
+2021-07-08 22:21:17.839  INFO 55487 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-07-08 22:21:17.853  INFO 55487 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-08 22:21:17.854  INFO 55487 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-07-08 22:21:17.999  INFO 55487 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-08 22:21:18.000  INFO 55487 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6208 ms
+2021-07-08 22:21:18.315  INFO 55487 --- [main] com.datastax.driver.core                 : DataStax Java driver 3.7.2 for Apache Cassandra
+2021-07-08 22:21:18.320  INFO 55487 --- [main] c.d.driver.core.GuavaCompatibility       : Detected Guava >= 19 in the classpath, using modern compatibility layer
+2021-07-08 22:21:18.659  INFO 55487 --- [main] com.datastax.driver.core.ClockFactory    : Using native clock to generate timestamps.
+2021-07-08 22:21:18.761  INFO 55487 --- [main] com.datastax.driver.core.NettyUtil       : Did not find Netty's native epoll transport in the classpath, defaulting to NIO.
+2021-07-08 22:21:19.137  INFO 55487 --- [main] c.d.d.c.p.DCAwareRoundRobinPolicy        : Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+2021-07-08 22:21:19.139  INFO 55487 --- [main] com.datastax.driver.core.Cluster         : New Cassandra host /127.0.0.1:9142 added
+2021-07-08 22:21:19.223  INFO 55487 --- [Native-Transport-Requests-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=bankless_test, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[], views=[], functions=[], types=[]}
+2021-07-08 22:21:19.858  INFO 55487 --- [main] com.erebor.app.config.TestContextConfig  : Binding account repository to test context
+2021-07-08 22:21:20.682  INFO 55487 --- [main] k.utils.Log4jControllerRegistration$     : Registered kafka:type=kafka.Log4jController MBean
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:host.name=192.168.1.8
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.version=1.8.0_202
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.vendor=Oracle Corporation
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre
+2021-07-08 22:21:20.713  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.class.path=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/test-classes:/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/classes:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/spring-boot-starter-web-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar:/Users/kmell/.m2/repository/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/kmell/.m2/repository/org/yaml/snakeyaml/1.25/snakeyaml-1.25.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.2.1.RELEASE/spring-boot-starter-json-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0/jackson-datatype-jdk8-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.0/jackson-datatype-jsr310-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.10.0/jackson-module-parameter-names-2.10.0.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.2.1.RELEASE/spring-boot-starter-tomcat-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.27/tomcat-embed-core-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.27/tomcat-embed-el-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.27/tomcat-embed-websocket-9.0.27.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-validation/2.2.1.RELEASE/spring-boot-starter-validation-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar:/Users/kmell/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.18.Final/hibernate-validator-6.0.18.Final.jar:/Users/kmell/.m2/repository/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar:/Users/kmell/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/kmell/.m2/repository/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-beans/5.2.1.RELEASE/spring-beans-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-aop/5.2.1.RELEASE/spring-aop-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-expression/5.2.1.RELEASE/spring-expression-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.2.1.RELEASE/spring-boot-starter-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test/2.2.1.RELEASE/spring-boot-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.2.1.RELEASE/spring-boot-test-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/Users/kmell/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.2/junit-jupiter-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/vintage/junit-vintage-engine/5.5.2/junit-vintage-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/Users/kmell/.m2/repository/org/mockito/mockito-junit-jupiter/3.1.0/mockito-junit-jupiter-3.1.0.jar:/Users/kmell/.m2/repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/kmell/.m2/repository/org/mockito/mockito-core/3.1.0/mockito-core-3.1.0.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.2/byte-buddy-agent-1.10.2.jar:/Users/kmell/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/Users/kmell/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/Users/kmell/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/kmell/.m2/repository/org/springframework/spring-core/5.2.1.RELEASE/spring-core-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-test/5.2.1.RELEASE/spring-test-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/xmlunit/xmlunit-core/2.6.3/xmlunit-core-2.6.3.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-data-cassandra/2.2.1.RELEASE/spring-boot-starter-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-tx/5.2.1.RELEASE/spring-tx-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-cassandra/2.2.1.RELEASE/spring-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-commons/2.2.1.RELEASE/spring-data-commons-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.7.2/cassandra-driver-core-3.7.2.jar:/Users/kmell/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/Users/kmell/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/Users/kmell/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/Users/kmell/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:/Users/kmell/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar:/Users/kmell/.m2/repository/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar:/Users/kmell/.m2/repository/io/vavr/vavr/0.10.2/vavr-0.10.2.jar:/Users/kmell/.m2/repository/io/vavr/vavr-match/0.10.2/vavr-match-0.10.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-core/4.2.2/java-driver-core-4.2.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/native-protocol/1.4.7/native-protocol-1.4.7.jar:/Users/kmell/.m2/repository/io/netty/netty-handler/4.1.43.Final/netty-handler-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-common/4.1.43.Final/netty-common-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-buffer/4.1.43.Final/netty-buffer-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-transport/4.1.43.Final/netty-transport-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-resolver/4.1.43.Final/netty-resolver-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-codec/4.1.43.Final/netty-codec-4.1.43.Final.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-shaded-guava/25.1-jre/java-driver-shaded-guava-25.1-jre.jar:/Users/kmell/.m2/repository/com/typesafe/config/1.3.4/config-1.3.4.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-ffi/2.1.10/jnr-ffi-2.1.10.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19-native.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-commons/7.1/asm-commons-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-analysis/7.1/asm-analysis-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-tree/7.1/asm-tree-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-util/7.1/asm-util-7.1.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-posix/3.0.50/jnr-posix-3.0.50.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-constants/0.9.12/jnr-constants-0.9.12.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.1/metrics-core-4.1.1.jar:/Users/kmell/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11.jar:/Users/kmell/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/kmell/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.12/spotbugs-annotations-3.1.12.jar:/Users/kmell/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/kmell/.m2/repository/org/cassandraunit/cassandra-unit/3.5.0.1/cassandra-unit-3.5.0.1.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-all/3.11.2/cassandra-all-3.11.2.jar:/Users/kmell/.m2/repository/org/xerial/snappy/snappy-java/1.1.1.7/snappy-java-1.1.1.7.jar:/Users/kmell/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/Users/kmell/.m2/repository/com/ning/compress-lzf/0.8.4/compress-lzf-0.8.4.jar:/Users/kmell/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/Users/kmell/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar:/Users/kmell/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar:/Users/kmell/.m2/repository/org/antlr/antlr/3.5.2/antlr-3.5.2.jar:/Users/kmell/.m2/repository/org/antlr/ST4/4.0.8/ST4-4.0.8.jar:/Users/kmell/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/kmell/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.29/jcl-over-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/Users/kmell/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/kmell/.m2/repository/com/boundary/high-scale-lib/1.0.6/high-scale-lib-1.0.6.jar:/Users/kmell/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.1.1/metrics-jvm-4.1.1.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config3/3.0.3/reporter-config3-3.0.3.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.3/reporter-config-base-3.0.3.jar:/Users/kmell/.m2/repository/com/thinkaurelius/thrift/thrift-server/0.3.7/thrift-server-0.3.7.jar:/Users/kmell/.m2/repository/com/lmax/disruptor/3.0.1/disruptor-3.0.1.jar:/Users/kmell/.m2/repository/com/clearspring/analytics/stream/2.5.2/stream-2.5.2.jar:/Users/kmell/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-thrift/3.11.2/cassandra-thrift-3.11.2.jar:/Users/kmell/.m2/repository/com/carrotsearch/hppc/0.5.4/hppc-0.5.4.jar:/Users/kmell/.m2/repository/de/jflex/jflex/1.6.0/jflex-1.6.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/Users/kmell/.m2/repository/com/github/rholder/snowball-stemmer/1.3.0.581.1/snowball-stemmer-1.3.0.581.1.jar:/Users/kmell/.m2/repository/com/googlecode/concurrent-trees/concurrent-trees/2.4.0/concurrent-trees-2.4.0.jar:/Users/kmell/.m2/repository/com/github/jbellis/jamm/0.3.0/jamm-0.3.0.jar:/Users/kmell/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/kmell/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/kmell/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar:/Users/kmell/.m2/repository/org/caffinitas/ohc/ohc-core/0.4.4/ohc-core-0.4.4.jar:/Users/kmell/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.0/caffeine-2.8.0.jar:/Users/kmell/.m2/repository/org/checkerframework/checker-qual/2.10.0/checker-qual-2.10.0.jar:/Users/kmell/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.3/error_prone_annotations-2.3.3.jar:/Users/kmell/.m2/repository/org/jctools/jctools-core/1.2.1/jctools-core-1.2.1.jar:/Users/kmell/.m2/repository/com/google/guava/guava/21.0/guava-21.0.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/kmell/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpclient/4.5.10/httpclient-4.5.10.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpcore/4.4.12/httpcore-4.4.12.jar:/Users/kmell/.m2/repository/net/java/dev/jna/jna/4.5.2/jna-4.5.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-library/2.1/hamcrest-library-2.1.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka/2.3.3.RELEASE/spring-kafka-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1.jar:/Users/kmell/.m2/repository/com/github/luben/zstd-jni/1.4.0-1/zstd-jni-1.4.0-1.jar:/Users/kmell/.m2/repository/org/lz4/lz4-java/1.6.0/lz4-java-1.6.0.jar:/Users/kmell/.m2/repository/org/springframework/retry/spring-retry/1.2.4.RELEASE/spring-retry-1.2.4.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-context/5.2.1.RELEASE/spring-context-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-messaging/5.2.1.RELEASE/spring-messaging-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka-test/2.3.3.RELEASE/spring-kafka-test-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1-test.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams/2.3.1/kafka-streams-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-json/2.3.1/connect-json-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-api/2.3.1/connect-api-2.3.1.jar:/Users/kmell/.m2/repository/org/rocksdb/rocksdbjni/5.18.3/rocksdbjni-5.18.3.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams-test-utils/2.3.1/kafka-streams-test-utils-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.10.0/jackson-module-scala_2.12-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-paranamer/2.10.0/jackson-module-paranamer-2.10.0.jar:/Users/kmell/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.10.0/jackson-dataformat-csv-2.10.0.jar:/Users/kmell/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/kmell/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-library/2.12.8/scala-library-2.12.8.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-reflect/2.12.8/scala-reflect-2.12.8.jar:/Users/kmell/.m2/repository/com/typesafe/scala-logging/scala-logging_2.12/3.9.0/scala-logging_2.12-3.9.0.jar:/Users/kmell/.m2/repository/com/101tec/zkclient/0.11/zkclient-0.11.jar:/Users/kmell/.m2/repository/org/apache/zookeeper/zookeeper/3.4.14/zookeeper-3.4.14.jar:/Users/kmell/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1-test.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/kmell/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.library.path=/Users/kmell/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.io.tmpdir=/var/folders/4x/9v4b0gwj2mq0vtpvdmwkz0ch0000gn/T/
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:java.compiler=<NA>
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:os.name=Mac OS X
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:os.arch=x86_64
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:os.version=10.14.2
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:user.name=kmell
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:user.home=/Users/kmell
+2021-07-08 22:21:20.714  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Server environment:user.dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf
+2021-07-08 22:21:20.784  INFO 55487 --- [main] o.a.zookeeper.server.ZooKeeperServer     : Created server with tickTime 800 minSessionTimeout 1600 maxSessionTimeout 16000 datadir /var/folders/4x/9v4b0gwj2mq0vtpvdmwkz0ch0000gn/T/kafka-7006463672689634435/version-2 snapdir /var/folders/4x/9v4b0gwj2mq0vtpvdmwkz0ch0000gn/T/kafka-8399768372761290423/version-2
+2021-07-08 22:21:20.795  INFO 55487 --- [main] o.a.z.server.NIOServerCnxnFactory        : binding to port /127.0.0.1:0
+2021-07-08 22:21:20.843  INFO 55487 --- [main] kafka.server.KafkaConfig                 : KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 100
+	controller.socket.timeout.ms = 1000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 1800000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 2.3-IV1
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = PLAINTEXT://localhost:9092
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 2097152
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = logs/kafka-test
+	log.dirs = null
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.3-IV1
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 1000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 2
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 5
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 9223372036854775807
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 1000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = [DEFAULT]
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = 127.0.0.1:52634
+	zookeeper.connection.timeout.ms = 10000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+
+2021-07-08 22:21:20.977  INFO 55487 --- [main] kafka.server.KafkaServer                 : starting
+2021-07-08 22:21:20.979  INFO 55487 --- [main] kafka.server.KafkaServer                 : Connecting to zookeeper on 127.0.0.1:52634
+2021-07-08 22:21:21.018  INFO 55487 --- [main] kafka.zookeeper.ZooKeeperClient          : [ZooKeeperClient Kafka server] Initializing a new session to 127.0.0.1:52634.
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:host.name=192.168.1.8
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.version=1.8.0_202
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.vendor=Oracle Corporation
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre
+2021-07-08 22:21:21.027  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.class.path=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/test-classes:/Users/kmell/ideaprojects/km3ll/dwarrowdelf/target/classes:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.2.1.RELEASE/spring-boot-starter-web-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter/2.2.1.RELEASE/spring-boot-starter-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot/2.2.1.RELEASE/spring-boot-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.2.1.RELEASE/spring-boot-starter-logging-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.12.1/log4j-to-slf4j-2.12.1.jar:/Users/kmell/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar:/Users/kmell/.m2/repository/org/slf4j/jul-to-slf4j/1.7.29/jul-to-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/kmell/.m2/repository/org/yaml/snakeyaml/1.25/snakeyaml-1.25.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.2.1.RELEASE/spring-boot-starter-json-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.0/jackson-datatype-jdk8-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.0/jackson-datatype-jsr310-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.10.0/jackson-module-parameter-names-2.10.0.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.2.1.RELEASE/spring-boot-starter-tomcat-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.27/tomcat-embed-core-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.27/tomcat-embed-el-9.0.27.jar:/Users/kmell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.27/tomcat-embed-websocket-9.0.27.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-validation/2.2.1.RELEASE/spring-boot-starter-validation-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.1/jakarta.validation-api-2.0.1.jar:/Users/kmell/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.18.Final/hibernate-validator-6.0.18.Final.jar:/Users/kmell/.m2/repository/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar:/Users/kmell/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/kmell/.m2/repository/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-beans/5.2.1.RELEASE/spring-beans-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-aop/5.2.1.RELEASE/spring-aop-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-expression/5.2.1.RELEASE/spring-expression-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.2.1.RELEASE/spring-boot-starter-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test/2.2.1.RELEASE/spring-boot-test-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.2.1.RELEASE/spring-boot-test-autoconfigure-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/Users/kmell/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.2/junit-jupiter-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/junit/vintage/junit-vintage-engine/5.5.2/junit-vintage-engine-5.5.2.jar:/Users/kmell/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/Users/kmell/.m2/repository/org/mockito/mockito-junit-jupiter/3.1.0/mockito-junit-jupiter-3.1.0.jar:/Users/kmell/.m2/repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/kmell/.m2/repository/org/mockito/mockito-core/3.1.0/mockito-core-3.1.0.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy/1.10.2/byte-buddy-1.10.2.jar:/Users/kmell/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.2/byte-buddy-agent-1.10.2.jar:/Users/kmell/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/Users/kmell/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/Users/kmell/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/kmell/.m2/repository/org/springframework/spring-core/5.2.1.RELEASE/spring-core-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-jcl/5.2.1.RELEASE/spring-jcl-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-test/5.2.1.RELEASE/spring-test-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/xmlunit/xmlunit-core/2.6.3/xmlunit-core-2.6.3.jar:/Users/kmell/.m2/repository/org/springframework/boot/spring-boot-starter-data-cassandra/2.2.1.RELEASE/spring-boot-starter-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-tx/5.2.1.RELEASE/spring-tx-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-cassandra/2.2.1.RELEASE/spring-data-cassandra-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/data/spring-data-commons/2.2.1.RELEASE/spring-data-commons-2.2.1.RELEASE.jar:/Users/kmell/.m2/repository/com/datastax/cassandra/cassandra-driver-core/3.7.2/cassandra-driver-core-3.7.2.jar:/Users/kmell/.m2/repository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar:/Users/kmell/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/Users/kmell/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/Users/kmell/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:/Users/kmell/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar:/Users/kmell/.m2/repository/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar:/Users/kmell/.m2/repository/io/vavr/vavr/0.10.2/vavr-0.10.2.jar:/Users/kmell/.m2/repository/io/vavr/vavr-match/0.10.2/vavr-match-0.10.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-core/4.2.2/java-driver-core-4.2.2.jar:/Users/kmell/.m2/repository/com/datastax/oss/native-protocol/1.4.7/native-protocol-1.4.7.jar:/Users/kmell/.m2/repository/io/netty/netty-handler/4.1.43.Final/netty-handler-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-common/4.1.43.Final/netty-common-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-buffer/4.1.43.Final/netty-buffer-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-transport/4.1.43.Final/netty-transport-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-resolver/4.1.43.Final/netty-resolver-4.1.43.Final.jar:/Users/kmell/.m2/repository/io/netty/netty-codec/4.1.43.Final/netty-codec-4.1.43.Final.jar:/Users/kmell/.m2/repository/com/datastax/oss/java-driver-shaded-guava/25.1-jre/java-driver-shaded-guava-25.1-jre.jar:/Users/kmell/.m2/repository/com/typesafe/config/1.3.4/config-1.3.4.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-ffi/2.1.10/jnr-ffi-2.1.10.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19.jar:/Users/kmell/.m2/repository/com/github/jnr/jffi/1.2.19/jffi-1.2.19-native.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-commons/7.1/asm-commons-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-analysis/7.1/asm-analysis-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-tree/7.1/asm-tree-7.1.jar:/Users/kmell/.m2/repository/org/ow2/asm/asm-util/7.1/asm-util-7.1.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-a64asm/1.0.0/jnr-a64asm-1.0.0.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-x86asm/1.0.2/jnr-x86asm-1.0.2.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-posix/3.0.50/jnr-posix-3.0.50.jar:/Users/kmell/.m2/repository/com/github/jnr/jnr-constants/0.9.12/jnr-constants-0.9.12.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.1/metrics-core-4.1.1.jar:/Users/kmell/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11.jar:/Users/kmell/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/kmell/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.12/spotbugs-annotations-3.1.12.jar:/Users/kmell/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/kmell/.m2/repository/org/cassandraunit/cassandra-unit/3.5.0.1/cassandra-unit-3.5.0.1.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-all/3.11.2/cassandra-all-3.11.2.jar:/Users/kmell/.m2/repository/org/xerial/snappy/snappy-java/1.1.1.7/snappy-java-1.1.1.7.jar:/Users/kmell/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/Users/kmell/.m2/repository/com/ning/compress-lzf/0.8.4/compress-lzf-0.8.4.jar:/Users/kmell/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/Users/kmell/.m2/repository/commons-codec/commons-codec/1.13/commons-codec-1.13.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar:/Users/kmell/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar:/Users/kmell/.m2/repository/org/antlr/antlr/3.5.2/antlr-3.5.2.jar:/Users/kmell/.m2/repository/org/antlr/ST4/4.0.8/ST4-4.0.8.jar:/Users/kmell/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/Users/kmell/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.29/jcl-over-slf4j-1.7.29.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/Users/kmell/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/Users/kmell/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/kmell/.m2/repository/com/boundary/high-scale-lib/1.0.6/high-scale-lib-1.0.6.jar:/Users/kmell/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar:/Users/kmell/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.1.1/metrics-jvm-4.1.1.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config3/3.0.3/reporter-config3-3.0.3.jar:/Users/kmell/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.3/reporter-config-base-3.0.3.jar:/Users/kmell/.m2/repository/com/thinkaurelius/thrift/thrift-server/0.3.7/thrift-server-0.3.7.jar:/Users/kmell/.m2/repository/com/lmax/disruptor/3.0.1/disruptor-3.0.1.jar:/Users/kmell/.m2/repository/com/clearspring/analytics/stream/2.5.2/stream-2.5.2.jar:/Users/kmell/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/kmell/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/kmell/.m2/repository/org/apache/cassandra/cassandra-thrift/3.11.2/cassandra-thrift-3.11.2.jar:/Users/kmell/.m2/repository/com/carrotsearch/hppc/0.5.4/hppc-0.5.4.jar:/Users/kmell/.m2/repository/de/jflex/jflex/1.6.0/jflex-1.6.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/kmell/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/Users/kmell/.m2/repository/com/github/rholder/snowball-stemmer/1.3.0.581.1/snowball-stemmer-1.3.0.581.1.jar:/Users/kmell/.m2/repository/com/googlecode/concurrent-trees/concurrent-trees/2.4.0/concurrent-trees-2.4.0.jar:/Users/kmell/.m2/repository/com/github/jbellis/jamm/0.3.0/jamm-0.3.0.jar:/Users/kmell/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/kmell/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/kmell/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar:/Users/kmell/.m2/repository/org/caffinitas/ohc/ohc-core/0.4.4/ohc-core-0.4.4.jar:/Users/kmell/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.0/caffeine-2.8.0.jar:/Users/kmell/.m2/repository/org/checkerframework/checker-qual/2.10.0/checker-qual-2.10.0.jar:/Users/kmell/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.3/error_prone_annotations-2.3.3.jar:/Users/kmell/.m2/repository/org/jctools/jctools-core/1.2.1/jctools-core-1.2.1.jar:/Users/kmell/.m2/repository/com/google/guava/guava/21.0/guava-21.0.jar:/Users/kmell/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/Users/kmell/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpclient/4.5.10/httpclient-4.5.10.jar:/Users/kmell/.m2/repository/org/apache/httpcomponents/httpcore/4.4.12/httpcore-4.4.12.jar:/Users/kmell/.m2/repository/net/java/dev/jna/jna/4.5.2/jna-4.5.2.jar:/Users/kmell/.m2/repository/org/hamcrest/hamcrest-library/2.1/hamcrest-library-2.1.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka/2.3.3.RELEASE/spring-kafka-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1.jar:/Users/kmell/.m2/repository/com/github/luben/zstd-jni/1.4.0-1/zstd-jni-1.4.0-1.jar:/Users/kmell/.m2/repository/org/lz4/lz4-java/1.6.0/lz4-java-1.6.0.jar:/Users/kmell/.m2/repository/org/springframework/retry/spring-retry/1.2.4.RELEASE/spring-retry-1.2.4.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-context/5.2.1.RELEASE/spring-context-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/spring-messaging/5.2.1.RELEASE/spring-messaging-5.2.1.RELEASE.jar:/Users/kmell/.m2/repository/org/springframework/kafka/spring-kafka-test/2.3.3.RELEASE/spring-kafka-test-2.3.3.RELEASE.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-clients/2.3.1/kafka-clients-2.3.1-test.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams/2.3.1/kafka-streams-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-json/2.3.1/connect-json-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/connect-api/2.3.1/connect-api-2.3.1.jar:/Users/kmell/.m2/repository/org/rocksdb/rocksdbjni/5.18.3/rocksdbjni-5.18.3.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka-streams-test-utils/2.3.1/kafka-streams-test-utils-2.3.1.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.10.0/jackson-module-scala_2.12-2.10.0.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/module/jackson-module-paranamer/2.10.0/jackson-module-paranamer-2.10.0.jar:/Users/kmell/.m2/repository/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar:/Users/kmell/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.10.0/jackson-dataformat-csv-2.10.0.jar:/Users/kmell/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/kmell/.m2/repository/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-library/2.12.8/scala-library-2.12.8.jar:/Users/kmell/.m2/repository/org/scala-lang/scala-reflect/2.12.8/scala-reflect-2.12.8.jar:/Users/kmell/.m2/repository/com/typesafe/scala-logging/scala-logging_2.12/3.9.0/scala-logging_2.12-3.9.0.jar:/Users/kmell/.m2/repository/com/101tec/zkclient/0.11/zkclient-0.11.jar:/Users/kmell/.m2/repository/org/apache/zookeeper/zookeeper/3.4.14/zookeeper-3.4.14.jar:/Users/kmell/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/Users/kmell/.m2/repository/org/apache/kafka/kafka_2.12/2.3.1/kafka_2.12-2.3.1-test.jar:/Users/kmell/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/kmell/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/kmell/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:
+2021-07-08 22:21:21.029  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.library.path=/Users/kmell/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2021-07-08 22:21:21.030  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.io.tmpdir=/var/folders/4x/9v4b0gwj2mq0vtpvdmwkz0ch0000gn/T/
+2021-07-08 22:21:21.030  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:java.compiler=<NA>
+2021-07-08 22:21:21.030  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:os.name=Mac OS X
+2021-07-08 22:21:21.030  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:os.arch=x86_64
+2021-07-08 22:21:21.030  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:os.version=10.14.2
+2021-07-08 22:21:21.031  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:user.name=kmell
+2021-07-08 22:21:21.031  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:user.home=/Users/kmell
+2021-07-08 22:21:21.031  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Client environment:user.dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf
+2021-07-08 22:21:21.037  INFO 55487 --- [main] org.apache.zookeeper.ZooKeeper           : Initiating client connection, connectString=127.0.0.1:52634 sessionTimeout=6000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@46c662f2
+2021-07-08 22:21:21.070  INFO 55487 --- [main-SendThread(localhost:52634)] org.apache.zookeeper.ClientCnxn          : Opening socket connection to server localhost/127.0.0.1:52634. Will not attempt to authenticate using SASL (unknown error)
+2021-07-08 22:21:21.071  INFO 55487 --- [main-SendThread(localhost:52634)] org.apache.zookeeper.ClientCnxn          : Socket connection established to localhost/127.0.0.1:52634, initiating session
+2021-07-08 22:21:21.071  INFO 55487 --- [NIOServerCxn.Factory:/127.0.0.1:0] o.a.z.server.NIOServerCnxnFactory        : Accepted socket connection from /127.0.0.1:52635
+2021-07-08 22:21:21.076  INFO 55487 --- [main] kafka.zookeeper.ZooKeeperClient          : [ZooKeeperClient Kafka server] Waiting until connected.
+2021-07-08 22:21:21.083  INFO 55487 --- [NIOServerCxn.Factory:/127.0.0.1:0] o.a.zookeeper.server.ZooKeeperServer     : Client attempting to establish new session at /127.0.0.1:52635
+2021-07-08 22:21:21.088  INFO 55487 --- [SyncThread:0] o.a.z.server.persistence.FileTxnLog      : Creating new log file: log.1
+2021-07-08 22:21:21.102  INFO 55487 --- [SyncThread:0] o.a.zookeeper.server.ZooKeeperServer     : Established session 0x10027a83e530000 with negotiated timeout 6000 for client /127.0.0.1:52635
+2021-07-08 22:21:21.103  INFO 55487 --- [main-SendThread(localhost:52634)] org.apache.zookeeper.ClientCnxn          : Session establishment complete on server localhost/127.0.0.1:52634, sessionid = 0x10027a83e530000, negotiated timeout = 6000
+2021-07-08 22:21:21.107  INFO 55487 --- [main] kafka.zookeeper.ZooKeeperClient          : [ZooKeeperClient Kafka server] Connected.
+2021-07-08 22:21:21.216  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:create cxid:0x2 zxid:0x3 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NoNode for /brokers
+2021-07-08 22:21:21.220  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:create cxid:0x6 zxid:0x7 txntype:-1 reqpath:n/a Error Path:/config Error:KeeperErrorCode = NoNode for /config
+2021-07-08 22:21:21.223  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:create cxid:0x9 zxid:0xa txntype:-1 reqpath:n/a Error Path:/admin Error:KeeperErrorCode = NoNode for /admin
+2021-07-08 22:21:21.325  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:create cxid:0x15 zxid:0x15 txntype:-1 reqpath:n/a Error Path:/cluster Error:KeeperErrorCode = NoNode for /cluster
+2021-07-08 22:21:21.329  INFO 55487 --- [main] kafka.server.KafkaServer                 : Cluster ID = OMVg-z04QwKkal5XQ1GahQ
+2021-07-08 22:21:21.334  WARN 55487 --- [main] kafka.server.BrokerMetadataCheckpoint    : No meta.properties file under dir /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test/meta.properties
+2021-07-08 22:21:21.470  INFO 55487 --- [main] kafka.server.KafkaConfig                 : KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 100
+	controller.socket.timeout.ms = 1000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 1800000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 2.3-IV1
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = PLAINTEXT://localhost:9092
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 2097152
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = logs/kafka-test
+	log.dirs = null
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.3-IV1
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 1000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 2
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 5
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 9223372036854775807
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 1000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = [DEFAULT]
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = 127.0.0.1:52634
+	zookeeper.connection.timeout.ms = 10000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+
+2021-07-08 22:21:21.485  INFO 55487 --- [main] kafka.server.KafkaConfig                 : KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 100
+	controller.socket.timeout.ms = 1000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 1800000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 2.3-IV1
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = PLAINTEXT://localhost:9092
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 2097152
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = logs/kafka-test
+	log.dirs = null
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.3-IV1
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 1000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 2
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 5
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 9223372036854775807
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 1000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = [DEFAULT]
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = 127.0.0.1:52634
+	zookeeper.connection.timeout.ms = 10000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+
+2021-07-08 22:21:21.545  INFO 55487 --- [ThrottledChannelReaper-Fetch] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Fetch]: Starting
+2021-07-08 22:21:21.546  INFO 55487 --- [ThrottledChannelReaper-Produce] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Produce]: Starting
+2021-07-08 22:21:21.548  INFO 55487 --- [ThrottledChannelReaper-Request] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Request]: Starting
+2021-07-08 22:21:21.587  INFO 55487 --- [main] kafka.log.LogManager                     : Log directory /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test not found, creating it.
+2021-07-08 22:21:21.598  INFO 55487 --- [main] kafka.log.LogManager                     : Loading logs.
+2021-07-08 22:21:21.611  INFO 55487 --- [main] kafka.log.LogManager                     : Logs loading complete in 13 ms.
+2021-07-08 22:21:21.635  INFO 55487 --- [main] kafka.log.LogManager                     : Starting log cleanup with a period of 300000 ms.
+2021-07-08 22:21:21.638  INFO 55487 --- [main] kafka.log.LogManager                     : Starting log flusher with a default period of 9223372036854775807 ms.
+2021-07-08 22:21:21.641  INFO 55487 --- [main] kafka.log.LogCleaner                     : Starting the log cleaner
+2021-07-08 22:21:21.676  INFO 55487 --- [kafka-log-cleaner-thread-0] kafka.log.LogCleaner                     : [kafka-log-cleaner-thread-0]: Starting
+2021-07-08 22:21:22.113  INFO 55487 --- [main] kafka.network.Acceptor                   : Awaiting socket connections on localhost:9092.
+2021-07-08 22:21:22.160  INFO 55487 --- [main] kafka.network.SocketServer               : [SocketServer brokerId=0] Created data-plane acceptor and processors for endpoint : EndPoint(localhost,9092,ListenerName(PLAINTEXT),PLAINTEXT)
+2021-07-08 22:21:22.162  INFO 55487 --- [main] kafka.network.SocketServer               : [SocketServer brokerId=0] Started 1 acceptor threads for data-plane
+2021-07-08 22:21:22.210  INFO 55487 --- [ExpirationReaper-0-Produce] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Produce]: Starting
+2021-07-08 22:21:22.211  INFO 55487 --- [ExpirationReaper-0-Fetch] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Fetch]: Starting
+2021-07-08 22:21:22.212  INFO 55487 --- [ExpirationReaper-0-DeleteRecords] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-DeleteRecords]: Starting
+2021-07-08 22:21:22.213  INFO 55487 --- [ExpirationReaper-0-ElectPreferredLeader] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-ElectPreferredLeader]: Starting
+2021-07-08 22:21:22.237  INFO 55487 --- [LogDirFailureHandler] k.s.ReplicaManager$LogDirFailureHandler  : [LogDirFailureHandler]: Starting
+2021-07-08 22:21:22.265  INFO 55487 --- [main] kafka.zk.KafkaZkClient                   : Creating /brokers/ids/0 (is it secure? false)
+2021-07-08 22:21:22.287  INFO 55487 --- [main] kafka.zk.KafkaZkClient                   : Stat of the created znode at /brokers/ids/0 is: 24,24,1625800882282,1625800882282,1,0,0,72101197591543808,188,0,24
+
+2021-07-08 22:21:22.288  INFO 55487 --- [main] kafka.zk.KafkaZkClient                   : Registered broker 0 at path /brokers/ids/0 with addresses: ArrayBuffer(EndPoint(localhost,9092,ListenerName(PLAINTEXT),PLAINTEXT)), czxid (broker epoch): 24
+2021-07-08 22:21:22.289  WARN 55487 --- [main] kafka.server.BrokerMetadataCheckpoint    : No meta.properties file under dir /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test/meta.properties
+2021-07-08 22:21:22.372  INFO 55487 --- [controller-event-thread] rollerEventManager$ControllerEventThread : [ControllerEventThread controllerId=0] Starting
+2021-07-08 22:21:22.379  INFO 55487 --- [ExpirationReaper-0-topic] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-topic]: Starting
+2021-07-08 22:21:22.384  INFO 55487 --- [ExpirationReaper-0-Heartbeat] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Heartbeat]: Starting
+2021-07-08 22:21:22.385  INFO 55487 --- [ExpirationReaper-0-Rebalance] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Rebalance]: Starting
+2021-07-08 22:21:22.395  INFO 55487 --- [controller-event-thread] kafka.zk.KafkaZkClient                   : Successfully created /controller_epoch with initial epoch 0
+2021-07-08 22:21:22.403  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] 0 successfully elected as the controller. Epoch incremented to 1 and epoch zk version is now 1
+2021-07-08 22:21:22.404  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Registering handlers
+2021-07-08 22:21:22.406  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Deleting log dir event notifications
+2021-07-08 22:21:22.410  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Deleting isr change notifications
+2021-07-08 22:21:22.412  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Initializing controller context
+2021-07-08 22:21:22.429  INFO 55487 --- [main] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Starting up.
+2021-07-08 22:21:22.432  INFO 55487 --- [main] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Startup complete.
+2021-07-08 22:21:22.437  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 7 milliseconds.
+2021-07-08 22:21:22.457  INFO 55487 --- [main] k.c.transaction.ProducerIdManager        : [ProducerId Manager 0]: Acquired new producerId block (brokerId:0,blockStartProducerId:0,blockEndProducerId:999) by writing to Zk with path version 1
+2021-07-08 22:21:22.465  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Initialized broker epochs cache: Map(0 -> 24)
+2021-07-08 22:21:22.496  INFO 55487 --- [Controller-0-to-broker-0-send-thread] kafka.controller.RequestSendThread       : [RequestSendThread controllerId=0] Starting
+2021-07-08 22:21:22.497  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Partitions being reassigned: Map()
+2021-07-08 22:21:22.498  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Currently active brokers in the cluster: Set(0)
+2021-07-08 22:21:22.499  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Currently shutting brokers in the cluster: Set()
+2021-07-08 22:21:22.500  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Current list of topics in the cluster: Set()
+2021-07-08 22:21:22.500  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Fetching topic deletions in progress
+2021-07-08 22:21:22.507  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] List of topics to be deleted: 
+2021-07-08 22:21:22.508  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] List of topics ineligible for deletion: 
+2021-07-08 22:21:22.508  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Initializing topic deletion manager
+2021-07-08 22:21:22.509  INFO 55487 --- [controller-event-thread] kafka.controller.TopicDeletionManager    : [Topic Deletion Manager 0] Initializing manager with initial deletions: Set(), initial ineligible deletions: Set()
+2021-07-08 22:21:22.509  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Sending update metadata request
+2021-07-08 22:21:22.525  INFO 55487 --- [controller-event-thread] kafka.controller.ZkReplicaStateMachine   : [ReplicaStateMachine controllerId=0] Initializing replica state
+2021-07-08 22:21:22.526  INFO 55487 --- [controller-event-thread] kafka.controller.ZkReplicaStateMachine   : [ReplicaStateMachine controllerId=0] Triggering online replica state changes
+2021-07-08 22:21:22.535  INFO 55487 --- [controller-event-thread] kafka.controller.ZkReplicaStateMachine   : [ReplicaStateMachine controllerId=0] Triggering offline replica state changes
+2021-07-08 22:21:22.536  INFO 55487 --- [controller-event-thread] k.controller.ZkPartitionStateMachine     : [PartitionStateMachine controllerId=0] Initializing partition state
+2021-07-08 22:21:22.537  INFO 55487 --- [controller-event-thread] k.controller.ZkPartitionStateMachine     : [PartitionStateMachine controllerId=0] Triggering online partition state changes
+2021-07-08 22:21:22.545  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Ready to serve as the new controller with epoch 1
+2021-07-08 22:21:22.548  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Removing partitions Set() from the list of reassigned partitions in zookeeper
+2021-07-08 22:21:22.548  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] No more partitions need to be reassigned. Deleting zk path /admin/reassign_partitions
+2021-07-08 22:21:22.549  INFO 55487 --- [Controller-0-to-broker-0-send-thread] kafka.controller.RequestSendThread       : [RequestSendThread controllerId=0] Controller 0 connected to localhost:9092 (id: 0 rack: null) for sending state change requests
+2021-07-08 22:21:22.554  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Partitions undergoing preferred replica election: 
+2021-07-08 22:21:22.554  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Partitions that completed preferred replica election: 
+2021-07-08 22:21:22.555  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Skipping preferred replica election for partitions due to topic deletion: 
+2021-07-08 22:21:22.555  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Resuming preferred replica election for partitions: 
+2021-07-08 22:21:22.563  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Starting preferred replica leader election for partitions 
+2021-07-08 22:21:22.566  INFO 55487 --- [main] k.c.transaction.TransactionCoordinator   : [TransactionCoordinator id=0] Starting up.
+2021-07-08 22:21:22.568  INFO 55487 --- [TxnMarkerSenderThread-0] k.c.t.TransactionMarkerChannelManager    : [Transaction Marker Channel Manager 0]: Starting
+2021-07-08 22:21:22.570  INFO 55487 --- [main] k.c.transaction.TransactionCoordinator   : [TransactionCoordinator id=0] Startup complete.
+2021-07-08 22:21:22.581  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:multi cxid:0x32 zxid:0x1c txntype:-1 reqpath:n/a aborting remaining multi ops. Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election
+2021-07-08 22:21:22.586  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Starting the controller scheduler
+2021-07-08 22:21:22.653  INFO 55487 --- [/config/changes-event-process-thread] icationListener$ChangeEventProcessThread : [/config/changes-event-process-thread]: Starting
+2021-07-08 22:21:22.661  INFO 55487 --- [main] kafka.network.SocketServer               : [SocketServer brokerId=0] Started data-plane processors for 1 acceptors
+2021-07-08 22:21:22.667  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2021-07-08 22:21:22.667  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2021-07-08 22:21:22.667  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1625800882663
+2021-07-08 22:21:22.671  INFO 55487 --- [main] kafka.server.KafkaServer                 : [KafkaServer id=0] started
+2021-07-08 22:21:22.679  INFO 55487 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [127.0.0.1:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-07-08 22:21:22.778  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2021-07-08 22:21:22.785  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2021-07-08 22:21:22.796  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1625800882778
+2021-07-08 22:21:22.921  INFO 55487 --- [data-plane-kafka-request-handler-4] kafka.zk.AdminZkClient                   : Creating topic test-embedded-topic with configuration {} and initial partition assignment Map(1 -> ArrayBuffer(0), 0 -> ArrayBuffer(0))
+2021-07-08 22:21:22.922  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:setData cxid:0x3e zxid:0x1d txntype:-1 reqpath:n/a Error Path:/config/topics/test-embedded-topic Error:KeeperErrorCode = NoNode for /config/topics/test-embedded-topic
+2021-07-08 22:21:22.939  INFO 55487 --- [data-plane-kafka-request-handler-4] kafka.zk.AdminZkClient                   : Creating topic test-account-opened with configuration {} and initial partition assignment Map(1 -> ArrayBuffer(0), 0 -> ArrayBuffer(0))
+2021-07-08 22:21:22.939  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:setData cxid:0x44 zxid:0x20 txntype:-1 reqpath:n/a Error Path:/config/topics/test-account-opened Error:KeeperErrorCode = NoNode for /config/topics/test-account-opened
+2021-07-08 22:21:22.948  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New topics: [Set(test-embedded-topic)], deleted topics: [Set()], new partition replica assignment [Map(test-embedded-topic-1 -> Vector(0), test-embedded-topic-0 -> Vector(0))]
+2021-07-08 22:21:22.950  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New partition creation callback for test-embedded-topic-1,test-embedded-topic-0
+2021-07-08 22:21:23.009  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New topics: [Set(test-account-opened)], deleted topics: [Set()], new partition replica assignment [Map(test-account-opened-1 -> Vector(0), test-account-opened-0 -> Vector(0))]
+2021-07-08 22:21:23.009  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New partition creation callback for test-account-opened-1,test-account-opened-0
+2021-07-08 22:21:23.014  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.server.ReplicaFetcherManager       : [ReplicaFetcherManager on broker 0] Removed fetcher for partitions Set(test-embedded-topic-1, test-embedded-topic-0)
+2021-07-08 22:21:23.115  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.Log                            : [Log partition=test-embedded-topic-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:23.124  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.Log                            : [Log partition=test-embedded-topic-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 83 ms
+2021-07-08 22:21:23.127  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.LogManager                     : Created log for partition test-embedded-topic-1 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, segment.bytes -> 1073741824, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:23.131  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Partition                  : [Partition test-embedded-topic-1 broker=0] No checkpointed highwatermark is found for partition test-embedded-topic-1
+2021-07-08 22:21:23.134  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Replica                    : Replica loaded for partition test-embedded-topic-1 with initial high watermark 0
+2021-07-08 22:21:23.138  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Partition                  : [Partition test-embedded-topic-1 broker=0] test-embedded-topic-1 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:23.177  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.Log                            : [Log partition=test-embedded-topic-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:23.178  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.Log                            : [Log partition=test-embedded-topic-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms
+2021-07-08 22:21:23.179  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.log.LogManager                     : Created log for partition test-embedded-topic-0 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, segment.bytes -> 1073741824, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:23.179  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Partition                  : [Partition test-embedded-topic-0 broker=0] No checkpointed highwatermark is found for partition test-embedded-topic-0
+2021-07-08 22:21:23.179  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Replica                    : Replica loaded for partition test-embedded-topic-0 with initial high watermark 0
+2021-07-08 22:21:23.180  INFO 55487 --- [data-plane-kafka-request-handler-1] kafka.cluster.Partition                  : [Partition test-embedded-topic-0 broker=0] test-embedded-topic-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:23.205  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.server.ReplicaFetcherManager       : [ReplicaFetcherManager on broker 0] Removed fetcher for partitions Set(test-account-opened-0, test-account-opened-1)
+2021-07-08 22:21:23.211  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=test-account-opened-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:23.212  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=test-account-opened-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms
+2021-07-08 22:21:23.219  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition test-account-opened-0 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, segment.bytes -> 1073741824, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:23.220  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition test-account-opened-0 broker=0] No checkpointed highwatermark is found for partition test-account-opened-0
+2021-07-08 22:21:23.220  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition test-account-opened-0 with initial high watermark 0
+2021-07-08 22:21:23.221  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition test-account-opened-0 broker=0] test-account-opened-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:23.226  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=test-account-opened-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:23.227  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=test-account-opened-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms
+2021-07-08 22:21:23.228  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition test-account-opened-1 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, segment.bytes -> 1073741824, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:23.228  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition test-account-opened-1 broker=0] No checkpointed highwatermark is found for partition test-account-opened-1
+2021-07-08 22:21:23.228  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition test-account-opened-1 with initial high watermark 0
+2021-07-08 22:21:23.228  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition test-account-opened-1 broker=0] test-account-opened-1 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:23.931  INFO 55487 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-08 22:21:24.745  INFO 55487 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-07-08 22:21:24.755  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2021-07-08 22:21:24.764  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2021-07-08 22:21:24.765  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1625800884755
+2021-07-08 22:21:24.868  INFO 55487 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-07-08 22:21:24.942  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2021-07-08 22:21:24.942  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2021-07-08 22:21:24.942  INFO 55487 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1625800884942
+2021-07-08 22:21:24.944  INFO 55487 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=test-consumer-group] Subscribed to topic(s): test-account-opened
+2021-07-08 22:21:24.947  INFO 55487 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2021-07-08 22:21:24.974  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=test-consumer-group] Cluster ID: OMVg-z04QwKkal5XQ1GahQ
+2021-07-08 22:21:24.986  INFO 55487 --- [data-plane-kafka-request-handler-5] kafka.zk.AdminZkClient                   : Creating topic __consumer_offsets with configuration {segment.bytes=104857600, compression.type=producer, cleanup.policy=compact} and initial partition assignment Map(2 -> ArrayBuffer(0), 4 -> ArrayBuffer(0), 1 -> ArrayBuffer(0), 3 -> ArrayBuffer(0), 0 -> ArrayBuffer(0))
+2021-07-08 22:21:24.987  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Got user-level KeeperException when processing sessionid:0x10027a83e530000 type:setData cxid:0x5b zxid:0x2d txntype:-1 reqpath:n/a Error Path:/config/topics/__consumer_offsets Error:KeeperErrorCode = NoNode for /config/topics/__consumer_offsets
+2021-07-08 22:21:24.989  INFO 55487 --- [data-plane-kafka-request-handler-5] kafka.server.KafkaApis                   : [KafkaApi-0] Auto creation of topic __consumer_offsets with 5 partitions and replication factor 1 is successful
+2021-07-08 22:21:24.991  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New topics: [Set(__consumer_offsets)], deleted topics: [Set()], new partition replica assignment [Map(__consumer_offsets-4 -> Vector(0), __consumer_offsets-3 -> Vector(0), __consumer_offsets-2 -> Vector(0), __consumer_offsets-0 -> Vector(0), __consumer_offsets-1 -> Vector(0))]
+2021-07-08 22:21:24.991  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] New partition creation callback for __consumer_offsets-4,__consumer_offsets-3,__consumer_offsets-2,__consumer_offsets-0,__consumer_offsets-1
+2021-07-08 22:21:25.008  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.server.ReplicaFetcherManager       : [ReplicaFetcherManager on broker 0] Removed fetcher for partitions Set(__consumer_offsets-4, __consumer_offsets-3, __consumer_offsets-2, __consumer_offsets-0, __consumer_offsets-1)
+2021-07-08 22:21:25.013  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:25.014  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-0, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms
+2021-07-08 22:21:25.015  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition __consumer_offsets-0 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> compact, flush.ms -> 9223372036854775807, segment.bytes -> 104857600, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:25.015  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-0 broker=0] No checkpointed highwatermark is found for partition __consumer_offsets-0
+2021-07-08 22:21:25.015  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition __consumer_offsets-0 with initial high watermark 0
+2021-07-08 22:21:25.016  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-0 broker=0] __consumer_offsets-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:25.022  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-4, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:25.023  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-4, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms
+2021-07-08 22:21:25.024  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition __consumer_offsets-4 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> compact, flush.ms -> 9223372036854775807, segment.bytes -> 104857600, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:25.024  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-4 broker=0] No checkpointed highwatermark is found for partition __consumer_offsets-4
+2021-07-08 22:21:25.024  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition __consumer_offsets-4 with initial high watermark 0
+2021-07-08 22:21:25.025  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-4 broker=0] __consumer_offsets-4 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:25.031  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:25.032  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-1, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms
+2021-07-08 22:21:25.033  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition __consumer_offsets-1 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> compact, flush.ms -> 9223372036854775807, segment.bytes -> 104857600, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:25.033  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-1 broker=0] No checkpointed highwatermark is found for partition __consumer_offsets-1
+2021-07-08 22:21:25.033  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition __consumer_offsets-1 with initial high watermark 0
+2021-07-08 22:21:25.034  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-1 broker=0] __consumer_offsets-1 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:25.038  INFO 55487 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52645 (http) with context path ''
+2021-07-08 22:21:25.039  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-2, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:25.040  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-2, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms
+2021-07-08 22:21:25.040  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition __consumer_offsets-2 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> compact, flush.ms -> 9223372036854775807, segment.bytes -> 104857600, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:25.041  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-2 broker=0] No checkpointed highwatermark is found for partition __consumer_offsets-2
+2021-07-08 22:21:25.041  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition __consumer_offsets-2 with initial high watermark 0
+2021-07-08 22:21:25.041  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-2 broker=0] __consumer_offsets-2 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:25.047  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-3, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Loading producer state till offset 0 with message format version 2
+2021-07-08 22:21:25.047  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.Log                            : [Log partition=__consumer_offsets-3, dir=/Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms
+2021-07-08 22:21:25.049  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.log.LogManager                     : Created log for partition __consumer_offsets-3 in /Users/kmell/ideaprojects/km3ll/dwarrowdelf/logs/kafka-test with properties {compression.type -> producer, message.downconversion.enable -> true, min.insync.replicas -> 1, segment.jitter.ms -> 0, cleanup.policy -> compact, flush.ms -> 9223372036854775807, segment.bytes -> 104857600, retention.ms -> 604800000, flush.messages -> 9223372036854775807, message.format.version -> 2.3-IV1, file.delete.delay.ms -> 1000, max.compaction.lag.ms -> 9223372036854775807, max.message.bytes -> 1000012, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, min.cleanable.dirty.ratio -> 0.5, index.interval.bytes -> 4096, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}.
+2021-07-08 22:21:25.049  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-3 broker=0] No checkpointed highwatermark is found for partition __consumer_offsets-3
+2021-07-08 22:21:25.049  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Replica                    : Replica loaded for partition __consumer_offsets-3 with initial high watermark 0
+2021-07-08 22:21:25.049  INFO 55487 --- [data-plane-kafka-request-handler-7] kafka.cluster.Partition                  : [Partition __consumer_offsets-3 broker=0] __consumer_offsets-3 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1
+2021-07-08 22:21:25.052  INFO 55487 --- [data-plane-kafka-request-handler-7] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Scheduling loading of offsets and group metadata from __consumer_offsets-3
+2021-07-08 22:21:25.053  INFO 55487 --- [data-plane-kafka-request-handler-7] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Scheduling loading of offsets and group metadata from __consumer_offsets-2
+2021-07-08 22:21:25.053  INFO 55487 --- [data-plane-kafka-request-handler-7] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Scheduling loading of offsets and group metadata from __consumer_offsets-1
+2021-07-08 22:21:25.053  INFO 55487 --- [data-plane-kafka-request-handler-7] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Scheduling loading of offsets and group metadata from __consumer_offsets-4
+2021-07-08 22:21:25.053  INFO 55487 --- [data-plane-kafka-request-handler-7] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Scheduling loading of offsets and group metadata from __consumer_offsets-0
+2021-07-08 22:21:25.061  INFO 55487 --- [main] c.e.a.controller.StatusControllerTests   : Started StatusControllerTests in 13.654 seconds (JVM running for 15.735)
+2021-07-08 22:21:25.063  INFO 55487 --- [main] c.erebor.app.config.TestCassandraConfig  : Creating tables
+2021-07-08 22:21:25.076  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Finished loading offsets and group metadata from __consumer_offsets-3 in 23 milliseconds.
+2021-07-08 22:21:25.077  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Finished loading offsets and group metadata from __consumer_offsets-2 in 0 milliseconds.
+2021-07-08 22:21:25.078  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Finished loading offsets and group metadata from __consumer_offsets-1 in 1 milliseconds.
+2021-07-08 22:21:25.078  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Finished loading offsets and group metadata from __consumer_offsets-4 in 0 milliseconds.
+2021-07-08 22:21:25.078  INFO 55487 --- [group-metadata-manager-0] k.c.group.GroupMetadataManager           : [GroupMetadataManager brokerId=0] Finished loading offsets and group metadata from __consumer_offsets-0 in 0 milliseconds.
+2021-07-08 22:21:25.084  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-07-08 22:21:25.088  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Revoking previously assigned partitions []
+2021-07-08 22:21:25.089  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : test-consumer-group: partitions revoked: []
+2021-07-08 22:21:25.089  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] (Re-)joining group
+2021-07-08 22:21:25.117  INFO 55487 --- [Native-Transport-Requests-1] o.a.cassandra.service.MigrationManager   : Create new table: org.apache.cassandra.config.CFMetaData@10aab7d5[cfId=bdd582d0-e064-11eb-83a1-8f1661343963,ksName=bankless_test,cfName=accounts,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9710942a, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.Int32Type),partitionColumns=[[] | [balance]],partitionKeyColumns=[country_code],clusteringColumns=[no],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[no, balance, country_code],droppedColumns={},triggers=[],indexes=[]]
+2021-07-08 22:21:25.126  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] (Re-)joining group
+2021-07-08 22:21:25.131  INFO 55487 --- [MigrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing bankless_test.accounts
+2021-07-08 22:21:25.139  INFO 55487 --- [data-plane-kafka-request-handler-5] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Preparing to rebalance group test-consumer-group in state PreparingRebalance with old generation 0 (__consumer_offsets-1) (reason: Adding new member consumer-1-637d364a-4eb9-46ca-bbdf-e5efb90ff1f1 with group instanceid None)
+2021-07-08 22:21:25.157  INFO 55487 --- [executor-Rebalance] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Stabilized group test-consumer-group generation 1 (__consumer_offsets-1)
+2021-07-08 22:21:25.172  INFO 55487 --- [data-plane-kafka-request-handler-7] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Assignment received from leader for group test-consumer-group for generation 1
+2021-07-08 22:21:25.171  INFO 55487 --- [main] c.erebor.app.config.TestCassandraConfig  : Inserting test records into accounts table
+2021-07-08 22:21:25.288  WARN 55487 --- [Native-Transport-Requests-1] org.apache.cassandra.utils.FBUtilities   : Trigger directory doesn't exist, please create it and try again.
+2021-07-08 22:21:25.400  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Successfully joined group with generation 1
+2021-07-08 22:21:25.412  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Setting newly assigned partitions: test-account-opened-0, test-account-opened-1
+2021-07-08 22:21:25.428  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Found no committed offset for partition test-account-opened-0
+2021-07-08 22:21:25.428  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Found no committed offset for partition test-account-opened-1
+2021-07-08 22:21:25.487  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-1, groupId=test-consumer-group] Resetting offset for partition test-account-opened-0 to offset 0.
+2021-07-08 22:21:25.489  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-1, groupId=test-consumer-group] Resetting offset for partition test-account-opened-1 to offset 0.
+2021-07-08 22:21:25.509  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : test-consumer-group: partitions assigned: [test-account-opened-0, test-account-opened-1]
+2021-07-08 22:21:26.330  INFO 55487 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-08 22:21:26.330  INFO 55487 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-08 22:21:26.363  INFO 55487 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2021-07-08 22:21:26.539  INFO 55487 --- [http-nio-auto-1-exec-1] c.e.app.kafka.AccountOpenedPublisher     : Publishing event: topic 'test-account-opened' key '2faddf4b-a123-4ec5-a194-27c1e449ad7a' data 2021-07-08T22:21:26.538;CAN;90001;10000.0
+2021-07-08 22:21:26.552  INFO 55487 --- [http-nio-auto-1-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2021-07-08 22:21:26.586  INFO 55487 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2021-07-08 22:21:26.587  INFO 55487 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2021-07-08 22:21:26.588  INFO 55487 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1625800886586
+2021-07-08 22:21:26.598  INFO 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: OMVg-z04QwKkal5XQ1GahQ
+2021-07-08 22:21:26.634  INFO 55487 --- [kafka-producer-network-thread | producer-1] c.e.app.kafka.PublisherLoggingCallBack   : Kafka event published successfully. topic: 'test-account-opened' partition: '1' offset '0'
+2021-07-08 22:21:26.648  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.app.kafka.AccountOpenedSubscriber    : Processing event: KafkaAccountOpenedEvent{dateTime='2021-07-08T22:21:26.538', countryCode='CAN', no='90001', balance='10000.0'}
+2021-07-08 22:21:26.722  INFO 55487 --- [OptionalTasks:1] o.a.cassandra.auth.CassandraRoleManager  : Created default superuser role 'cassandra'
+2021-07-08 22:21:26.775  INFO 55487 --- [StorageServiceShutdownHook] org.apache.cassandra.hints.HintsService  : Paused hints dispatch
+2021-07-08 22:21:26.775  INFO 55487 --- [StorageServiceShutdownHook] o.apache.cassandra.thrift.ThriftServer   : Stop listening to thrift clients
+2021-07-08 22:21:26.781  INFO 55487 --- [StorageServiceShutdownHook] org.apache.cassandra.transport.Server    : Stop listening for CQL clients
+2021-07-08 22:21:26.781  INFO 55487 --- [StorageServiceShutdownHook] org.apache.cassandra.gms.Gossiper        : Announcing shutdown
+2021-07-08 22:21:26.781  INFO 55487 --- [StorageServiceShutdownHook] o.a.cassandra.service.StorageService     : Node /127.0.0.1 state jump to shutdown
+2021-07-08 22:21:26.783  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=test-consumer-group] Member consumer-1-637d364a-4eb9-46ca-bbdf-e5efb90ff1f1 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-07-08 22:21:26.784 ERROR 55487 --- [cluster-reconnection-0] c.d.driver.core.ControlConnection        : [Control connection] Cannot connect to any host, scheduling retry in 1000 milliseconds
+2021-07-08 22:21:26.785  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=test-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-07-08 22:21:26.785  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2021-07-08 22:21:26.788  INFO 55487 --- [data-plane-kafka-request-handler-3] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Member consumer-1-637d364a-4eb9-46ca-bbdf-e5efb90ff1f1 in group test-consumer-group has left, removing it from the group
+2021-07-08 22:21:26.789  INFO 55487 --- [data-plane-kafka-request-handler-3] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Preparing to rebalance group test-consumer-group in state PreparingRebalance with old generation 1 (__consumer_offsets-1) (reason: removing member consumer-1-637d364a-4eb9-46ca-bbdf-e5efb90ff1f1 on LeaveGroup)
+2021-07-08 22:21:26.791  INFO 55487 --- [data-plane-kafka-request-handler-3] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Group test-consumer-group with generation 2 is now empty (__consumer_offsets-1)
+2021-07-08 22:21:26.796  INFO 55487 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] essageListenerContainer$ListenerConsumer : test-consumer-group: Consumer stopped
+2021-07-08 22:21:26.798  INFO 55487 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-08 22:21:26.799  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaServer                 : [KafkaServer id=0] shutting down
+2021-07-08 22:21:26.800  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaServer                 : [KafkaServer id=0] Starting controlled shutdown
+2021-07-08 22:21:26.808  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Shutting down broker 0
+2021-07-08 22:21:26.817  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaServer                 : [KafkaServer id=0] Controlled shutdown succeeded
+2021-07-08 22:21:26.822  INFO 55487 --- [SpringContextShutdownHook] icationListener$ChangeEventProcessThread : [/config/changes-event-process-thread]: Shutting down
+2021-07-08 22:21:26.823  INFO 55487 --- [/config/changes-event-process-thread] icationListener$ChangeEventProcessThread : [/config/changes-event-process-thread]: Stopped
+2021-07-08 22:21:26.823  INFO 55487 --- [SpringContextShutdownHook] icationListener$ChangeEventProcessThread : [/config/changes-event-process-thread]: Shutdown completed
+2021-07-08 22:21:26.824  INFO 55487 --- [SpringContextShutdownHook] kafka.network.SocketServer               : [SocketServer brokerId=0] Stopping socket server request processors
+2021-07-08 22:21:26.836  INFO 55487 --- [SpringContextShutdownHook] kafka.network.SocketServer               : [SocketServer brokerId=0] Stopped socket server request processors
+2021-07-08 22:21:26.838  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaRequestHandlerPool     : [data-plane Kafka Request Handler on Broker 0], shutting down
+2021-07-08 22:21:26.841  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaRequestHandlerPool     : [data-plane Kafka Request Handler on Broker 0], shut down completely
+2021-07-08 22:21:26.844  INFO 55487 --- [SpringContextShutdownHook] kafka.server.KafkaApis                   : [KafkaApi-0] Shutdown complete.
+2021-07-08 22:21:26.845  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-topic]: Shutting down
+2021-07-08 22:21:26.933  WARN 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2021-07-08 22:21:27.040  INFO 55487 --- [ExpirationReaper-0-topic] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-topic]: Stopped
+2021-07-08 22:21:27.040  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-topic]: Shutdown completed
+2021-07-08 22:21:27.041  WARN 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2021-07-08 22:21:27.043  INFO 55487 --- [SpringContextShutdownHook] k.c.transaction.TransactionCoordinator   : [TransactionCoordinator id=0] Shutting down.
+2021-07-08 22:21:27.045  INFO 55487 --- [SpringContextShutdownHook] k.c.transaction.ProducerIdManager        : [ProducerId Manager 0]: Shutdown complete: last producerId assigned 0
+2021-07-08 22:21:27.046  INFO 55487 --- [SpringContextShutdownHook] k.c.transaction.TransactionStateManager  : [Transaction State Manager 0]: Shutdown complete
+2021-07-08 22:21:27.046  INFO 55487 --- [SpringContextShutdownHook] k.c.t.TransactionMarkerChannelManager    : [Transaction Marker Channel Manager 0]: Shutting down
+2021-07-08 22:21:27.047  INFO 55487 --- [TxnMarkerSenderThread-0] k.c.t.TransactionMarkerChannelManager    : [Transaction Marker Channel Manager 0]: Stopped
+2021-07-08 22:21:27.047  INFO 55487 --- [SpringContextShutdownHook] k.c.t.TransactionMarkerChannelManager    : [Transaction Marker Channel Manager 0]: Shutdown completed
+2021-07-08 22:21:27.047  INFO 55487 --- [SpringContextShutdownHook] k.c.transaction.TransactionCoordinator   : [TransactionCoordinator id=0] Shutdown complete.
+2021-07-08 22:21:27.048  INFO 55487 --- [SpringContextShutdownHook] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Shutting down.
+2021-07-08 22:21:27.049  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Heartbeat]: Shutting down
+2021-07-08 22:21:27.057  INFO 55487 --- [ExpirationReaper-0-Heartbeat] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Heartbeat]: Stopped
+2021-07-08 22:21:27.057  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Heartbeat]: Shutdown completed
+2021-07-08 22:21:27.058  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Rebalance]: Shutting down
+2021-07-08 22:21:27.165  INFO 55487 --- [ExpirationReaper-0-Rebalance] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Rebalance]: Stopped
+2021-07-08 22:21:27.165  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Rebalance]: Shutdown completed
+2021-07-08 22:21:27.165  INFO 55487 --- [SpringContextShutdownHook] k.coordinator.group.GroupCoordinator     : [GroupCoordinator 0]: Shutdown complete.
+2021-07-08 22:21:27.166  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaManager              : [ReplicaManager broker=0] Shutting down
+2021-07-08 22:21:27.166  INFO 55487 --- [SpringContextShutdownHook] k.s.ReplicaManager$LogDirFailureHandler  : [LogDirFailureHandler]: Shutting down
+2021-07-08 22:21:27.167  INFO 55487 --- [LogDirFailureHandler] k.s.ReplicaManager$LogDirFailureHandler  : [LogDirFailureHandler]: Stopped
+2021-07-08 22:21:27.167  INFO 55487 --- [SpringContextShutdownHook] k.s.ReplicaManager$LogDirFailureHandler  : [LogDirFailureHandler]: Shutdown completed
+2021-07-08 22:21:27.167  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaFetcherManager       : [ReplicaFetcherManager on broker 0] shutting down
+2021-07-08 22:21:27.168  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaFetcherManager       : [ReplicaFetcherManager on broker 0] shutdown completed
+2021-07-08 22:21:27.169  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaAlterLogDirsManager  : [ReplicaAlterLogDirsManager on broker 0] shutting down
+2021-07-08 22:21:27.169  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaAlterLogDirsManager  : [ReplicaAlterLogDirsManager on broker 0] shutdown completed
+2021-07-08 22:21:27.169  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Fetch]: Shutting down
+2021-07-08 22:21:27.256  WARN 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2021-07-08 22:21:27.337  INFO 55487 --- [ExpirationReaper-0-Fetch] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Fetch]: Stopped
+2021-07-08 22:21:27.337  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Fetch]: Shutdown completed
+2021-07-08 22:21:27.337  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Produce]: Shutting down
+2021-07-08 22:21:27.462  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Produce]: Shutdown completed
+2021-07-08 22:21:27.462  INFO 55487 --- [ExpirationReaper-0-Produce] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-Produce]: Stopped
+2021-07-08 22:21:27.462  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-DeleteRecords]: Shutting down
+2021-07-08 22:21:27.465  INFO 55487 --- [ExpirationReaper-0-DeleteRecords] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-DeleteRecords]: Stopped
+2021-07-08 22:21:27.465  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-DeleteRecords]: Shutdown completed
+2021-07-08 22:21:27.465  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-ElectPreferredLeader]: Shutting down
+2021-07-08 22:21:27.588  INFO 55487 --- [controller-event-thread] kafka.controller.KafkaController         : [Controller id=0] Processing automatic preferred replica leader election
+2021-07-08 22:21:27.668  INFO 55487 --- [ExpirationReaper-0-ElectPreferredLeader] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-ElectPreferredLeader]: Stopped
+2021-07-08 22:21:27.668  INFO 55487 --- [SpringContextShutdownHook] perationPurgatory$ExpiredOperationReaper : [ExpirationReaper-0-ElectPreferredLeader]: Shutdown completed
+2021-07-08 22:21:27.671  WARN 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2021-07-08 22:21:27.673  INFO 55487 --- [SpringContextShutdownHook] kafka.server.ReplicaManager              : [ReplicaManager broker=0] Shut down completely
+2021-07-08 22:21:27.674  INFO 55487 --- [SpringContextShutdownHook] kafka.log.LogManager                     : Shutting down.
+2021-07-08 22:21:27.676  INFO 55487 --- [SpringContextShutdownHook] kafka.log.LogCleaner                     : Shutting down the log cleaner.
+2021-07-08 22:21:27.677  INFO 55487 --- [SpringContextShutdownHook] kafka.log.LogCleaner                     : [kafka-log-cleaner-thread-0]: Shutting down
+2021-07-08 22:21:27.678  INFO 55487 --- [kafka-log-cleaner-thread-0] kafka.log.LogCleaner                     : [kafka-log-cleaner-thread-0]: Stopped
+2021-07-08 22:21:27.678  INFO 55487 --- [SpringContextShutdownHook] kafka.log.LogCleaner                     : [kafka-log-cleaner-thread-0]: Shutdown completed
+2021-07-08 22:21:27.702  INFO 55487 --- [pool-14-thread-1] kafka.log.ProducerStateManager           : [ProducerStateManager partition=test-account-opened-1] Writing producer snapshot at offset 1
+2021-07-08 22:21:27.717  INFO 55487 --- [pool-14-thread-1] kafka.log.ProducerStateManager           : [ProducerStateManager partition=__consumer_offsets-1] Writing producer snapshot at offset 5
+2021-07-08 22:21:27.766  INFO 55487 --- [SpringContextShutdownHook] kafka.log.LogManager                     : Shutdown complete.
+2021-07-08 22:21:27.767  INFO 55487 --- [SpringContextShutdownHook] rollerEventManager$ControllerEventThread : [ControllerEventThread controllerId=0] Shutting down
+2021-07-08 22:21:27.769  INFO 55487 --- [controller-event-thread] rollerEventManager$ControllerEventThread : [ControllerEventThread controllerId=0] Stopped
+2021-07-08 22:21:27.769  INFO 55487 --- [SpringContextShutdownHook] rollerEventManager$ControllerEventThread : [ControllerEventThread controllerId=0] Shutdown completed
+2021-07-08 22:21:27.773  INFO 55487 --- [SpringContextShutdownHook] k.controller.ZkPartitionStateMachine     : [PartitionStateMachine controllerId=0] Stopped partition state machine
+2021-07-08 22:21:27.775  INFO 55487 --- [SpringContextShutdownHook] kafka.controller.ZkReplicaStateMachine   : [ReplicaStateMachine controllerId=0] Stopped replica state machine
+2021-07-08 22:21:27.776  INFO 55487 --- [SpringContextShutdownHook] kafka.controller.RequestSendThread       : [RequestSendThread controllerId=0] Shutting down
+2021-07-08 22:21:27.776  INFO 55487 --- [Controller-0-to-broker-0-send-thread] kafka.controller.RequestSendThread       : [RequestSendThread controllerId=0] Stopped
+2021-07-08 22:21:27.776  INFO 55487 --- [SpringContextShutdownHook] kafka.controller.RequestSendThread       : [RequestSendThread controllerId=0] Shutdown completed
+2021-07-08 22:21:27.779  INFO 55487 --- [SpringContextShutdownHook] kafka.controller.KafkaController         : [Controller id=0] Resigned
+2021-07-08 22:21:27.780  INFO 55487 --- [SpringContextShutdownHook] kafka.zookeeper.ZooKeeperClient          : [ZooKeeperClient Kafka server] Closing.
+2021-07-08 22:21:27.782  INFO 55487 --- [ProcessThread(sid:0 cport:52634):] o.a.z.server.PrepRequestProcessor        : Processed session termination for sessionid: 0x10027a83e530000
+2021-07-08 22:21:27.784  INFO 55487 --- [NIOServerCxn.Factory:/127.0.0.1:0] o.apache.zookeeper.server.NIOServerCnxn  : Closed socket connection for client /127.0.0.1:52635 which had sessionid 0x10027a83e530000
+2021-07-08 22:21:27.785  INFO 55487 --- [main-EventThread] org.apache.zookeeper.ClientCnxn          : EventThread shut down for session: 0x10027a83e530000
+2021-07-08 22:21:27.785  INFO 55487 --- [SpringContextShutdownHook] org.apache.zookeeper.ZooKeeper           : Session: 0x10027a83e530000 closed
+2021-07-08 22:21:27.786 ERROR 55487 --- [cluster-reconnection-0] c.d.driver.core.ControlConnection        : [Control connection] Cannot connect to any host, scheduling retry in 2000 milliseconds
+2021-07-08 22:21:27.787  INFO 55487 --- [SpringContextShutdownHook] kafka.zookeeper.ZooKeeperClient          : [ZooKeeperClient Kafka server] Closed.
+2021-07-08 22:21:27.787  INFO 55487 --- [SpringContextShutdownHook] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Fetch]: Shutting down
+2021-07-08 22:21:28.456  WARN 55487 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2021-07-08 22:21:28.632  INFO 55487 --- [SpringContextShutdownHook] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Fetch]: Shutdown completed
+2021-07-08 22:21:28.632  INFO 55487 --- [ThrottledChannelReaper-Fetch] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Fetch]: Stopped
+2021-07-08 22:21:28.633  INFO 55487 --- [SpringContextShutdownHook] lientQuotaManager$ThrottledChannelReaper : [ThrottledChannelReaper-Produce]: Shutting down
+2021-07-08 22:21:28.783  INFO 55487 --- [StorageServiceShutdownHook] o.apache.cassandra.net.MessagingService  : Waiting for messaging service to quiesce
+2021-07-08 22:21:28.785  INFO 55487 --- [ACCEPT-/127.0.0.1] o.apache.cassandra.net.MessagingService  : MessagingService has terminated the accept() thread
+2021-07-08 22:21:29.205  INFO 55487 --- [StorageServiceShutdownHook] org.apache.cassandra.hints.HintsService  : Paused hints dispatch
