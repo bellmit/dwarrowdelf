@@ -8,7 +8,14 @@ import org.junit.jupiter.api.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AppTest {
 
@@ -16,14 +23,7 @@ public class AppTest {
 
 	@Test
 	@Tag("Unit")
-	@DisplayName("Should answer with true")
-	public void shouldAnswerWithTrue() {
-		assertTrue(true);
-	}
-
-	@Test
-	@Tag("Unit")
-	@DisplayName("Should read application.properties file")
+	@DisplayName("Core should read an application.properties file")
 	public void shouldReadPropertiesFile() throws Exception {
 
 		String root = Thread.currentThread().getContextClassLoader().getResource("").getPath();
@@ -35,6 +35,21 @@ public class AppTest {
 
 		String greeting = properties.getProperty("greeting");
 		assertEquals("hello-motto", greeting);
+
+	}
+
+	@Test
+	@Tag("Unit")
+	@DisplayName("Core should read a .txt file")
+	public void shouldReadTxtFile() throws Exception {
+
+		String fileName = "sample.txt";
+
+		Path path = Paths.get(getClass().getClassLoader().getResource(fileName).toURI());
+		List<String> lines = Files.lines(path).collect(Collectors.toList());
+
+		LOGGER.info("Lines from {} file", fileName);
+		lines.forEach(line -> LOGGER.info("> {}", line));
 
 	}
 
