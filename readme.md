@@ -34,10 +34,11 @@ mvn exec:java -pl mod-http
 
 ### references
 
-* [Spring Java Format](https://github.com/spring-io/spring-javaformat)
+* [Intro to JaCoCo](https://www.baeldung.com/jacoco)
+* [Multi Module Project](https://www.baeldung.com/maven-multi-module)
 * [Lombok](https://projectlombok.org/features/all)
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
+* [Spring Java Format](https://github.com/spring-io/spring-javaformat)
 * [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
 * [Swagger](https://editor.swagger.io/)
 * [Vavr](https://www.vavr.io/vavr-docs/)
-* [Multi Module Project](https://www.baeldung.com/maven-multi-module)
