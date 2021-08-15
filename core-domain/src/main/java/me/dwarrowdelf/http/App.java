@@ -12,6 +12,7 @@ public class App {
 	public static void main(String[] args) {
 
 		LOGGER.info("Running the main method");
+
 		if (args.length > 0) {
 			LOGGER.info("List of arguments {}", Arrays.toString(args));
 		}
