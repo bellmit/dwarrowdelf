@@ -23,7 +23,9 @@ public class AppTest {
 
 	@Test
 	@Tag("Unit")
+	@DisplayName("Should read application.properties file")
 	public void shouldReadPropertiesFile() throws Exception {
+
 		String root = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		LOGGER.info("Root path: {}", root);
 
@@ -33,15 +35,7 @@ public class AppTest {
 
 		String greeting = properties.getProperty("greeting");
 		assertEquals("hello-motto", greeting);
+
 	}
-
-	@Test
-	@Tag("Integration")
-	@DisplayName("Should answer with true too")
-	public void shouldAnswerWithTrueToo() {
-		assertTrue(true);
-	}
-
-
 
 }
