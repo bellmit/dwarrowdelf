@@ -10,7 +10,9 @@
 
 ```
 mvn clean compile test
+mvn spring-javaformat:apply 
 mvn package
+
 mvn exec:java -pl core-domain
 mvn exec:java -pl mod-http
 ```
@@ -32,10 +34,10 @@ mvn exec:java -pl mod-http
 
 ### references
 
-* [Code formatting](https://github.com/spring-io/spring-javaformat)
+* [Spring Java Format](https://github.com/spring-io/spring-javaformat)
 * [Lombok](https://projectlombok.org/features/all)
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
 * [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
 * [Swagger](https://editor.swagger.io/)
 * [Vavr](https://www.vavr.io/vavr-docs/)
-* [maven-multi-module](https://www.baeldung.com/maven-multi-module)
+* [Multi Module Project](https://www.baeldung.com/maven-multi-module)
