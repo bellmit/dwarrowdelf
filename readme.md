@@ -1,45 +1,34 @@
 # dwarrowdef
 
-## Table of contents
+## contents
 
 * [commands](#commands)
-* [wip](#wip)
 * [backlog](#backlog)
 * [references](#references)
 
 ### commands
 
 ```
-# run local
-./mvnw clean compile test
-./mvnw spring-boot:run
-
-# run .jar file
-./mvnw package
-java -jar target/erebor-java-0.1.0.jar
-
-# format code
-./mvnw spring-javaformat:apply
-
-# maven
-mvn archetype:generate -DgroupId=me.dwarrowdelf  -DartifactId=core
+mvn clean compile test
+mvn package
+mvn exec:java -pl core-domain
+mvn exec:java -pl mod-http
 ```
-
-### wip
-
-- coverage
 
 ### backlog
 
-- micrometer
-- rest client / template
-- rabbitMQ
-- elasticsearch
-- logging context
-- circuit breakers
-- cache
-- request filters
-- modules
+- [ ] cache
+- [ ] cassandra
+- [ ] circuit breakers
+- [ ] elasticsearch
+- [ ] kafka
+- [ ] logging context
+- [X] maven modules
+- [ ] micrometer
+- [ ] rabbit-mq
+- [ ] request filters
+- [ ] rpc
+- [ ] rest client / template
 
 ### references
 
@@ -50,55 +39,3 @@ mvn archetype:generate -DgroupId=me.dwarrowdelf  -DartifactId=core
 * [Swagger](https://editor.swagger.io/)
 * [Vavr](https://www.vavr.io/vavr-docs/)
 * [maven-multi-module](https://www.baeldung.com/maven-multi-module)
-
-
-### to be defined
-
-**Tests**
-
-* `@Tag("unit")`
-* `@Tag("component")`
-* Deployment tests are tagged with `@SpringBootTest` and `@ActiveProfiles({ "test" })`
-
-**Cassandra**
-
-```
-# connect to embedded Cassandra
-export CQLSH_PORT=9042 ; export CQLSH_HOST=127.0.0.1 ; ./cqlsh -u cassandra -p cassandra
-expand on; use erebor;
-
-# queries
-select * from accounts;
-```
-
-**Kafka Topics**
-
-- local-embedded-topic
-- local-account-opened
-
-**Events**
-
-```
-# local-account-opened
-2010-10-10 10:10:00;CAN;800001;350000
-```
-
-```
-# consume events in console
-./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \ 
---consumer-property group.id=local-consumer-group --topic local-embedded-topic --from-beginning
-./kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 \
---consumer-property group.id=local-consumer-group --topic local-account-opened --from-beginning
-
-# produce events from console
-./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic local-embedded-topic
-./kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic local-account-opened
-```
-
-**HTTP**
-
-Base URL: `http://localhost:8080`. Endpoints described in:
-- `postman/erebor-java.postman_collection`
-- `swagger/erebor-java.yaml`
-
-

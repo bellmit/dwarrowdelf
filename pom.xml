@@ -4,7 +4,7 @@
 
     <groupId>middle-earth</groupId>
     <artifactId>dwarrowdelf</artifactId>
-    <version>0.1.0</version>
+    <version>0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -12,6 +12,7 @@
         <version>2.2.1.RELEASE</version>
     </parent>
 
+    <!--TODO. Remove unused libraries-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,7 +90,7 @@
     </build>
 
     <modules>
+        <module>mod-http</module>
         <module>core-domain</module>
-      <module>mod-http</module>
-  </modules>
+    </modules>
 </project>
