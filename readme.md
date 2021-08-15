@@ -34,9 +34,12 @@ mvn exec:java -pl mod-http
 
 ### references
 
+* [Baeldung Series](https://www.baeldung.com/category/series/)
 * [Intro to JaCoCo](https://www.baeldung.com/jacoco)
-* [Multi Module Project](https://www.baeldung.com/maven-multi-module)
+* [Java "Back to Basics"](https://www.baeldung.com/java-tutorial)
 * [Lombok](https://projectlombok.org/features/all)
+* [Multi Module Project](https://www.baeldung.com/maven-multi-module)
+* [How to read a file in Java](https://www.baeldung.com/reading-file-in-java)
 * [Reading Java Properties](https://www.baeldung.com/java-properties)
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
 * [Spring Java Format](https://github.com/spring-io/spring-javaformat)
