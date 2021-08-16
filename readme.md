@@ -39,6 +39,7 @@ mvn exec:java -pl mod-http
 - [ ] logging context
 - [ ] metrics
 - [ ] micrometer
+- [ ] mockito
 - [ ] protobuf
 - [ ] rabbit-mq
 - [ ] request filters
