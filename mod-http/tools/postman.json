@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"John Doe\"\n}"
+					"raw": "{\n    \"name\" : \"John Wick\"\n}"
 				},
 				"url": {
 					"raw": "{{endpoint}}/greeting",
@@ -55,7 +55,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{endpoint}}/USA/account?no=80001",
+					"raw": "{{endpoint}}/account?no=80001",
 					"host": [
 						"{{endpoint}}"
 					],
