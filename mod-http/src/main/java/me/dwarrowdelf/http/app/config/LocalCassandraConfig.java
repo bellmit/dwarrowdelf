@@ -36,12 +36,12 @@ public class LocalCassandraConfig {
 			template.getCqlOperations().execute(createAccounts);
 
 			LOGGER.info("Inserting records");
-			dataBaseScripts().forEach(statement -> template.getCqlOperations().execute(statement));
+			loadDbScripts().forEach(statement -> template.getCqlOperations().execute(statement));
 
 		};
 	}
 
-	private List<String> dataBaseScripts() {
+	private List<String> loadDbScripts() {
 		return ImmutableList.of(
 			"insert into accounts( no, balance ) values ( 80001, 5000000 );",
 			"insert into accounts( no, balance ) values ( 80002, 20000 );"
