@@ -1,6 +1,7 @@
 package me.dwarrowdelf.http.app.config;
 
-import me.dwarrowdelf.http.infrastructure.persistence.cassandra.StartupScripts;
+import com.google.common.collect.ImmutableList;
+import me.dwarrowdelf.http.infrastructure.repository.cassandra.AccountCassandraTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,25 +30,23 @@ public class TestCassandraConfig {
 	@Bean
 	ApplicationRunner applicationRunner(CassandraTemplate template) {
 		return args -> {
+
 			LOGGER.info("Creating tables");
-			for (String statement : StartupScripts.getCreationScripts(keyspace)) {
-				template.getCqlOperations().execute(statement);
-			}
-			LOGGER.info("Inserting test records into accounts table");
-			for (String statement : getInsertRows("test-accounts.sql")) {
-				template.getCqlOperations().execute(statement);
-			}
+			String createAccounts = AccountCassandraTable.createTableCql(keyspace);
+			template.getCqlOperations().execute(createAccounts);
+
+
+			LOGGER.info("Inserting records");
+			loadDbScripts().forEach(statement -> template.getCqlOperations().execute(statement));
+
 		};
 	}
 
-	private List<String> getInsertRows(String fileName) {
-		try {
-			File file = new ClassPathResource(fileName).getFile();
-			return Files.readAllLines(file.toPath());
-		}
-		catch (Exception ex) {
-			throw new RuntimeException(String.format("Unable to get insert rows from file %s", fileName), ex);
-		}
+	private List<String> loadDbScripts() {
+		return ImmutableList.of(
+			"insert into accounts( no, balance ) values ( 90001, 90000 );",
+			"insert into accounts( no, balance ) values ( 90002, 44000 );"
+		);
 	}
 
 }

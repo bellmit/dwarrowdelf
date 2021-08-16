@@ -1,6 +1,7 @@
 package me.dwarrowdelf.http.app.config;
 
-import me.dwarrowdelf.http.infrastructure.persistence.cassandra.StartupScripts;
+import com.google.common.collect.ImmutableList;
+import me.dwarrowdelf.http.infrastructure.repository.cassandra.AccountCassandraTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +14,8 @@ import org.springframework.data.cassandra.core.CassandraTemplate;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Configuration
@@ -27,25 +30,22 @@ public class LocalCassandraConfig {
 	@Bean
 	ApplicationRunner applicationRunner(CassandraTemplate template) {
 		return args -> {
+
 			LOGGER.info("Creating tables");
-			for (String statement : StartupScripts.getCreationScripts(keyspace)) {
-				template.getCqlOperations().execute(statement);
-			}
-			LOGGER.info("Inserting local records into accounts table");
-			for (String statement : getDataBaseScripts("local-accounts.sql")) {
-				template.getCqlOperations().execute(statement);
-			}
+			String createAccounts = AccountCassandraTable.createTableCql(keyspace);
+			template.getCqlOperations().execute(createAccounts);
+
+			LOGGER.info("Inserting records");
+			loadDbScripts().forEach(statement -> template.getCqlOperations().execute(statement));
+
 		};
 	}
 
-	private List<String> getDataBaseScripts(String fileName) {
-		try {
-			File file = new ClassPathResource(fileName).getFile();
-			return Files.readAllLines(file.toPath());
-		}
-		catch (Exception ex) {
-			throw new RuntimeException(String.format("Unable to get database scripts from file %s", fileName), ex);
-		}
+	private List<String> loadDbScripts() {
+		return ImmutableList.of(
+			"insert into accounts( no, balance ) values ( 80001, 5000000 );",
+			"insert into accounts( no, balance ) values ( 80002, 20000 );"
+		);
 	}
 
 }

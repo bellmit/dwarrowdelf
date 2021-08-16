@@ -1,17 +1,16 @@
 swagger: "2.0"
 info:
-  description: "External endpoints for dwarrowdelf domain"
   version: "1.0.0"
-  title: "Swagger Dwarrowdelf"
+  title: "Dwarrowdelf"
 host: "localhost:8080"
 basePath: "/"
 tags:
   - name: "status"
-    description: "API status"
+    description: ""
   - name: "greeting"
-    description: "Greeting messages"
+    description: ""
   - name: "account"
-    description: "Bank accounts"
+    description: ""
 schemes:
   - "http"
 paths:
@@ -19,7 +18,7 @@ paths:
     get:
       tags:
         - "status"
-      summary: "Current API status"
+      summary: ""
       description: ""
       operationId: "getStatus"
       produces:
@@ -39,16 +38,16 @@ paths:
     post:
       tags:
         - "greeting"
-      summary: "Says hello"
-      description: "Say hello to a specific user"
-      operationId: "createUser"
+      summary: ""
+      description: ""
+      operationId: "sayHello"
       parameters:
         - in: "body"
           name: "User"
-          description: "Who receives the greeting"
+          description: ""
           required: true
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/UserRequest"
       produces:
         - "application/json"
       responses:
@@ -60,77 +59,56 @@ paths:
             application/json:
               {
                 "dateTime": "2020-09-30T13:05:20.708",
-                "message": "Hello John Doe"
+                "message": "Hello John Wick"
               }
-  /{country}/account:
+  /account:
     get:
       tags:
         - "account"
-      summary: "Find an account"
+      summary: ""
       description: ""
       operationId: "findAccount"
       parameters:
-        - in: path
-          name: country
-          type: string
-          required: true
-          default: "USA"
-          description: "Bank account's country code"
         - in: query
           name: no
           type: integer
           required: true
           default: 80001
-          description: "Bank account's number"
+          description: ""
       produces:
         - "application/json"
       responses:
         "200":
-          description: "successful operation"
+          description: ""
           schema:
-            $ref: "#/definitions/AccountResponse"
+            $ref: "#/definitions/BaseResponse"
           examples:
             application/json:
               {
                 "dateTime": "2020-09-30T13:23:12.885",
-                "account": {
-                  "countryCode": "USA",
-                  "no": 80001,
-                  "balance": 5000000.0
-                }
+                "message": "[ no=80002, balance=20000 ]"
+              }
+        "404":
+          description: ""
+          schema:
+            $ref: "#/definitions/BaseResponse"
+          examples:
+            application/json:
+              {
+                "dateTime": "2020-09-30T13:25:45.122",
+                "message": "Account number 800023 not found"
               }
 definitions:
-  User:
+  UserRequest:
     type: object
     properties:
       name:
         type: string
-        example: "John Doe"
-  ResponseDto:
+        example: "John Wick"
+  BaseResponse:
     type: object
     properties:
       dateTime:
         type: string
-        example: "2020-09-30T13:29:00.001"
       message:
         type: string
-        example: "UP!"
-
-  AccountResponseDto:
-    type: object
-    properties:
-      dateTime:
-        type: string
-        example: "2020-09-30T13:29:00.001"
-      account:
-        type: object
-        properties:
-          countryCode:
-            type: string
-            example: "USA"
-          no:
-            type: integer
-            example: 80001
-          balance:
-            type: number
-            example: 5000000.0

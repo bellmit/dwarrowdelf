@@ -26,15 +26,15 @@ public class StatusControllerTests {
 
 	private TestRestTemplate restTemplate = new TestRestTemplate();
 
-	private ResponseEntity<String> getAccount(String countryCode, String accountNo) throws URISyntaxException {
+	private ResponseEntity<String> getAccount(String no) throws URISyntaxException {
 
-		String url = "http://localhost:" + serverPort + "/{country}/account?no={accountNo}";
+		String url = "http://localhost:" + serverPort + "/account?no={accountNo}";
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
 		HttpEntity<?> entity = new HttpEntity<>(headers);
 
-		Map<String, String> params = ImmutableMap.of("country", countryCode, "accountNo", accountNo);
+		Map<String, String> params = ImmutableMap.of("no", no);
 
 		return restTemplate.exchange(url, HttpMethod.GET, entity, String.class, params);
 
@@ -44,7 +44,7 @@ public class StatusControllerTests {
 	@DisplayName("GET account should return status code 200")
 	public void getAccount_Found() throws Exception {
 
-		ResponseEntity<String> response = getAccount("CAN", "90001");
+		ResponseEntity<String> response = getAccount("90001");
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 		System.out.println(response.getBody());
 
@@ -54,7 +54,7 @@ public class StatusControllerTests {
 	@DisplayName("GET account should return status code 200")
 	public void getAccount_NotFound() throws Exception {
 
-		ResponseEntity<String> response = getAccount("COL", "90123");
+		ResponseEntity<String> response = getAccount("90123");
 		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 		System.out.println(response.getBody());
 
