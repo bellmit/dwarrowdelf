@@ -1,12 +1,12 @@
-package me.dwarrowdelf.http.infrastructure.persistence.cassandra.repository;
+package me.dwarrowdelf.http.infrastructure.repository.cassandra;
 
-import me.dwarrowdelf.http.infrastructure.persistence.cassandra.table.AccountCassandraTable;
+import me.dwarrowdelf.http.infrastructure.repository.cassandra.AccountCassandraTable;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.cassandra.repository.Query;
 
 public interface AccountCassandraRepo extends CassandraRepository<AccountCassandraTable, AccountCassandraTable.Key> {
 
-	@Query("truncate table " + AccountCassandraTable.ACCOUNTS_TABLE)
+	@Query("truncate table accounts")
 	void truncate();
 
 }

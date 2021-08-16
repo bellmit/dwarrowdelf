@@ -1,4 +1,4 @@
-package me.dwarrowdelf.core.app.config.cassandra;
+package me.dwarrowdelf.http.app.config.cassandra;
 
 import com.datastax.driver.core.AuthProvider;
 import com.datastax.driver.core.PlainTextAuthProvider;

@@ -1,9 +1,6 @@
 package me.dwarrowdelf.http.app.http;
 
-import me.dwarrowdelf.http.app.http.dto.AccountResponse;
 import me.dwarrowdelf.http.app.http.dto.BaseResponse;
-import me.dwarrowdelf.http.app.kafka.AccountOpenedPublisher;
-import me.dwarrowdelf.http.app.kafka.dto.KafkaAccountOpenedEvent;
 import me.dwarrowdelf.http.domain.model.Account;
 import me.dwarrowdelf.http.domain.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,27 +17,16 @@ public class AccountController {
 	@Autowired
 	private AccountRepository accountRepository;
 
-	@Autowired
-	private AccountOpenedPublisher accountOpenedPublisher;
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	public ResponseEntity findAccount(@RequestParam("no") Integer no) {
 
-	@RequestMapping(value = "{country}/account", method = RequestMethod.GET)
-	public ResponseEntity findAccount(@PathVariable(name = "country") String countryCode,
-			@RequestParam("no") int accountNo) {
-
-		Optional<Account> result = accountRepository.find(countryCode, accountNo);
+		Optional<Account> result = accountRepository.find(no);
 		if (result.isPresent()) {
-			AccountResponse response = new AccountResponse(LocalDateTime.now().toString(), result.get());
-
-			KafkaAccountOpenedEvent event = new KafkaAccountOpenedEvent(response.getDateTime(),
-					response.getAccount().getCountryCode(), String.valueOf(response.getAccount().getNo()),
-					Double.toString(response.getAccount().getBalance()));
-			accountOpenedPublisher.publish(event);
-
-			return new ResponseEntity<AccountResponse>(response, HttpStatus.OK);
+			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(), result.get().toString());
+			return new ResponseEntity<BaseResponse>(response, HttpStatus.OK);
 		}
 		else {
-			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(),
-					String.format("Account number %s for country code %s not found", accountNo, countryCode));
+			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(), String.format("Account number %s not found", no));
 			return new ResponseEntity<BaseResponse>(response, HttpStatus.NOT_FOUND);
 		}
 

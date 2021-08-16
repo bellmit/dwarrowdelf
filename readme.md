@@ -13,6 +13,8 @@ mvn clean compile test
 mvn spring-javaformat:apply 
 mvn package
 
+mvn -pl mod-http spring-boot:run
+
 mvn exec:java -pl core-domain
 mvn exec:java -pl mod-http
 ```
@@ -44,6 +46,6 @@ mvn exec:java -pl mod-http
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/index.html)
 * [Spring Java Format](https://github.com/spring-io/spring-javaformat)
 * [Spring Kafka](https://docs.spring.io/spring-kafka/reference/html/)
-* [Swagger](https://editor.swagger.io/)
+* [Swagger Editor](https://editor.swagger.io/)
 * [Tagging and Filtering JUnit Tests](https://www.baeldung.com/junit-filtering-tests    )
 * [Vavr](https://www.vavr.io/vavr-docs/)
