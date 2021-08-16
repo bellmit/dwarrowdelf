@@ -3,7 +3,7 @@
 ## contents
 
 * [commands](#commands)
-* [backlog](#backlog)
+* [topics](#topics)
 * [references](#references)
 
 ### commands
@@ -19,20 +19,45 @@ mvn exec:java -pl core-domain
 mvn exec:java -pl mod-http
 ```
 
-### backlog
+### topics
+
+**backlog**
 
 - [ ] cache
-- [ ] cassandra
 - [ ] circuit breakers
+- [ ] cqrs
 - [ ] elasticsearch
+- [ ] eureka
+- [ ] event store
+- [ ] hystrix
+- [ ] h2 database
+- [ ] interceptors
+- [ ] java basics
+- [ ] jmeter
+- [ ] jwt
 - [ ] kafka
 - [ ] logging context
-- [X] maven modules
+- [ ] metrics
 - [ ] micrometer
+- [ ] protobuf
 - [ ] rabbit-mq
 - [ ] request filters
 - [ ] rpc
 - [ ] rest client / template
+- [ ] retries
+- [ ] spark
+- [ ] vavr
+- [ ] xml
+
+**complete**
+
+- [X] cassandra
+- [X] configuration
+- [X] logging
+- [X] maven modules
+- [X] postman
+- [X] swagger
+
 
 ### references
 
