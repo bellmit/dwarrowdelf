@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.controller;
+package me.dwarrowdelf.core.app.controller;
 
 import com.datastax.oss.driver.shaded.guava.common.collect.ImmutableMap;
 import org.junit.Test;

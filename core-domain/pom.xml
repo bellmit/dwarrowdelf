@@ -62,7 +62,7 @@
             </execution>
           </executions>
           <configuration>
-            <mainClass>me.dwarrowdelf.http.App</mainClass>
+            <mainClass>me.dwarrowdelf.core.App</mainClass>
           </configuration>
         </plugin>
       </plugins>

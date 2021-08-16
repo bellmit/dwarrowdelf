@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.config;
+package me.dwarrowdelf.core.app.config;
 
 import me.dwarrowdelf.http.app.kafka.AccountOpenedPublisher;
 import me.dwarrowdelf.http.app.kafka.AccountOpenedSubscriber;

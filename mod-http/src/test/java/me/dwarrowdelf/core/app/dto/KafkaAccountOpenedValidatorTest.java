@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.dto;
+package me.dwarrowdelf.core.app.dto;
 
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;

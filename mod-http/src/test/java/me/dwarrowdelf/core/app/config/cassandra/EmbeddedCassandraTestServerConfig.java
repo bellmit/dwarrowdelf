@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.config.cassandra;
+package me.dwarrowdelf.core.app.config.cassandra;
 
 import org.apache.thrift.transport.TTransportException;
 import org.cassandraunit.utils.EmbeddedCassandraServerHelper;

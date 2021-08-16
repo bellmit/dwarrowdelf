@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.config;
+package me.dwarrowdelf.core.app.config;
 
 import me.dwarrowdelf.http.infrastructure.persistence.cassandra.StartupScripts;
 import org.slf4j.Logger;

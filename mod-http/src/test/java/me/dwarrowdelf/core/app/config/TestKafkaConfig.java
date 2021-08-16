@@ -1,4 +1,4 @@
-package me.dwarrowdelf.http.app.config;
+package me.dwarrowdelf.core.app.config;
 
 import kafka.server.KafkaConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
