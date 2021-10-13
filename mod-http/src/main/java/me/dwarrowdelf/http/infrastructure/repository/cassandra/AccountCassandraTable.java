@@ -13,9 +13,8 @@ import org.springframework.data.cassandra.core.mapping.*;
 public class AccountCassandraTable {
 
 	public static String createTableCql(String keySpace) {
-		return String.format(
-			"CREATE TABLE IF NOT EXISTS %s.accounts( no int, balance bigint, PRIMARY KEY ((no)) );", keySpace
-		);
+		return String.format("CREATE TABLE IF NOT EXISTS %s.accounts( no int, balance bigint, PRIMARY KEY ((no)) );",
+				keySpace);
 	}
 
 	@Data
