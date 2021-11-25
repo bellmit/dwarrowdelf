@@ -3,27 +3,34 @@
 ## contents
 
 * [commands](#commands)
+* [modules](#modules)
 * [topics](#topics)
 * [references](#references)
 
 ### commands
 
 ```
-mvn clean compile test
-mvn spring-javaformat:apply 
+# compile
+mvn clean spring-javaformat:apply compile test
 mvn package
 
-mvn -pl mod-http spring-boot:run
-
+# run
 mvn exec:java -pl core-domain
 mvn exec:java -pl mod-http
+
+mvn -pl mod-http spring-boot:run
 ```
+
+### modules
+
+- core-domain
+- http
 
 ### topics
 
-**backlog**
-
 - [ ] cache
+- [X] cassandra
+- [X] configuration
 - [ ] circuit breakers
 - [ ] cqrs
 - [ ] elasticsearch
@@ -36,10 +43,13 @@ mvn exec:java -pl mod-http
 - [ ] jmeter
 - [ ] jwt
 - [ ] kafka
+- [X] logging
 - [ ] logging context
 - [ ] metrics
 - [ ] micrometer
 - [ ] mockito
+- [X] mvn modules
+- [X] postman
 - [ ] protobuf
 - [ ] rabbit-mq
 - [ ] request filters
@@ -47,18 +57,9 @@ mvn exec:java -pl mod-http
 - [ ] rest client / template
 - [ ] retries
 - [ ] spark
+- [X] swagger
 - [ ] vavr
 - [ ] xml
-
-**complete**
-
-- [X] cassandra
-- [X] configuration
-- [X] logging
-- [X] maven modules
-- [X] postman
-- [X] swagger
-
 
 ### references
 

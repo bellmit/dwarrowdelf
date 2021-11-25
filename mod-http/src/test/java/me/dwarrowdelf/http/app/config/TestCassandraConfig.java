@@ -35,7 +35,6 @@ public class TestCassandraConfig {
 			String createAccounts = AccountCassandraTable.createTableCql(keyspace);
 			template.getCqlOperations().execute(createAccounts);
 
-
 			LOGGER.info("Inserting records");
 			loadDbScripts().forEach(statement -> template.getCqlOperations().execute(statement));
 
@@ -43,10 +42,8 @@ public class TestCassandraConfig {
 	}
 
 	private List<String> loadDbScripts() {
-		return ImmutableList.of(
-			"insert into accounts( no, balance ) values ( 90001, 90000 );",
-			"insert into accounts( no, balance ) values ( 90002, 44000 );"
-		);
+		return ImmutableList.of("insert into accounts( no, balance ) values ( 90001, 90000 );",
+				"insert into accounts( no, balance ) values ( 90002, 44000 );");
 	}
 
 }

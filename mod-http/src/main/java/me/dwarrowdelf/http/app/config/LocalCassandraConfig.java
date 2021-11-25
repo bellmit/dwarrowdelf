@@ -42,10 +42,8 @@ public class LocalCassandraConfig {
 	}
 
 	private List<String> loadDbScripts() {
-		return ImmutableList.of(
-			"insert into accounts( no, balance ) values ( 80001, 5000000 );",
-			"insert into accounts( no, balance ) values ( 80002, 20000 );"
-		);
+		return ImmutableList.of("insert into accounts( no, balance ) values ( 80001, 5000000 );",
+				"insert into accounts( no, balance ) values ( 80002, 20000 );");
 	}
 
 }

@@ -26,7 +26,8 @@ public class AccountController {
 			return new ResponseEntity<BaseResponse>(response, HttpStatus.OK);
 		}
 		else {
-			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(), String.format("Account number %s not found", no));
+			BaseResponse response = new BaseResponse(LocalDateTime.now().toString(),
+					String.format("Account number %s not found", no));
 			return new ResponseEntity<BaseResponse>(response, HttpStatus.NOT_FOUND);
 		}
 
