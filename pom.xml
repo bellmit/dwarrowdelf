@@ -112,6 +112,7 @@
         </pluginManagement>
     </build>
 
+    <!--TODO. Fix compilation errors-->
     <modules>
         <module>mod-http</module>
         <module>core-domain</module>
